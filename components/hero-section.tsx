@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export function HeroSection() {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
@@ -7,20 +9,33 @@ export function HeroSection() {
       </div>
 
       <div className="hero-content">
-        <h1 id="hero-title">
-          I build the web
-          <br />
-          <em>with intention.</em>
-        </h1>
+        <div className="hero-copy-column">
+          <h1 id="hero-title">
+            I build the web
+            <br />
+            <em>with intention.</em>
+          </h1>
 
-        <div className="hero-supporting-copy">
-          <p>
-            I&apos;m Phawit, a frontend developer who turns thoughtful design into
-            responsive, useful interfaces.
-          </p>
-          <a className="text-link" href="#work">
-            See selected work <span aria-hidden="true">↓</span>
-          </a>
+          <div className="hero-supporting-copy">
+            <p>
+              I&apos;m Phawit, a frontend developer who turns thoughtful design into
+              responsive, useful interfaces.
+            </p>
+            <a className="text-link" href="#work">
+              See selected work <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+
+        <div className="hero-portrait">
+          <Image
+            src="/profile-placeholder.svg"
+            alt="Placeholder portrait for Phawit"
+            fill
+            priority
+            sizes="(max-width: 800px) 72vw, 30vw"
+          />
+          <span className="hero-portrait-label">Replace with your portrait ↗</span>
         </div>
       </div>
 

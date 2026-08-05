@@ -1,8 +1,10 @@
 import { AboutSection } from "@/components/about-section";
+import { ArticleSection } from "@/components/article-section";
 import { ContactSection } from "@/components/contact-section";
 import { HeroSection } from "@/components/hero-section";
 import { ProjectIndex } from "@/components/project-index";
 import { SiteHeader } from "@/components/site-header";
+import { TechMarquee } from "@/components/tech-marquee";
 import { getFeaturedProjects } from "@/lib/projects";
 
 export default function Home() {
@@ -17,8 +19,10 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <ProjectIndex projects={featuredProjects} />
+        <ArticleSection />
         <AboutSection />
         <ContactSection />
+        <TechMarquee />
       </main>
       <footer className="site-footer">
         <span>© 2026 Phawit</span>

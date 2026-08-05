@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { MobileMenu } from "./mobile-menu";
+
 export function SiteHeader() {
   return (
     <header className="site-header">
@@ -13,10 +15,13 @@ export function SiteHeader() {
         <Link href="/#contact">Contact</Link>
       </nav>
 
-      <a className="availability-pill" href="mailto:hello@phawit.dev">
-        <span className="availability-dot" aria-hidden="true" />
-        Available for opportunities
-      </a>
+      <div className="site-header-actions">
+        <a className="availability-pill" href="mailto:hello@phawit.dev">
+          <span className="availability-dot" aria-hidden="true" />
+          Available for opportunities
+        </a>
+        <MobileMenu />
+      </div>
     </header>
   );
 }
