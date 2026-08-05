@@ -1,7 +1,7 @@
 # Frontend Portfolio Design Spec
 
 Date: 2026-08-05
-Status: Approved direction, pending written-spec review
+Status: Approved direction; implementation in progress
 
 ## 1. Goal
 
@@ -31,6 +31,7 @@ The first release succeeds when:
 - A selected-work section with 3–5 mock projects, initially showing 3 featured projects.
 - Project cards with category, year, short summary, technologies, and visual preview.
 - Project detail pages at `/work/[slug]` using shared typed project data.
+- Project content stored in `data/projects.json`, with a typed loader boundary for the UI.
 - A concise about/process section.
 - Contact links for GitHub, LinkedIn, email, and a resume download placeholder.
 - Subtle interactive motion, hover previews on capable devices, and touch-friendly fallbacks.
@@ -103,7 +104,9 @@ Components should remain presentational where possible. Data and routing should 
 
 ## 8. Data and error behavior
 
-Project content will be local typed data for the first release. Project detail routes should resolve by slug and show a framework-appropriate not-found state for an unknown slug. Missing optional imagery should fall back to an intentional placeholder visual rather than a broken image. External links should open predictably and include appropriate relationship attributes when opening a new tab.
+Project content will be stored in `data/projects.json` for the first release. The JSON shape will include `slug`, `title`, `category`, `year`, `summary`, `description`, `role`, `technologies`, `image`, `imageAlt`, `accent`, `featured`, `liveUrl`, `repositoryUrl`, and an array of implementation highlights. A typed loader will validate the shape at the application boundary and expose `getProjects()`, `getFeaturedProjects()`, and `getProjectBySlug(slug)` to pages and components.
+
+Project detail routes should resolve by slug and show a framework-appropriate not-found state for an unknown slug. Missing optional imagery should fall back to an intentional placeholder visual rather than a broken image. External links should open predictably and include appropriate relationship attributes when opening a new tab.
 
 ## 9. Responsive behavior
 
@@ -124,9 +127,9 @@ Project content will be local typed data for the first release. Project detail r
 
 ## 11. Delivery sequence
 
-1. Replace starter page with the approved visual shell and mock content.
-2. Add typed project data and reusable project cards.
-3. Add project detail routes.
+1. Add JSON project content, typed loader, and mock SVG visuals.
+2. Replace starter page with the approved visual shell and mock content.
+3. Add typed project cards and project detail routes.
 4. Add restrained interaction and responsive fallbacks.
 5. Add metadata, accessibility refinements, and final verification.
 
