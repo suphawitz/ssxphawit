@@ -1,0 +1,132 @@
+[
+  {
+    "slug": "aurora-dashboard",
+    "title": "Aurora Dashboard",
+    "category": "Web application",
+    "year": "2026",
+    "summary": "A calm analytics workspace for turning busy data into clear next steps.",
+    "description": "Aurora is a small dashboard concept designed around hierarchy, quick scanning, and a comfortable rhythm for repeated daily use.",
+    "role": "Frontend design and development",
+    "technologies": ["Next.js", "TypeScript", "CSS"],
+    "image": "/projects/aurora-dashboard.svg",
+    "imageAlt": "Abstract analytics dashboard with a coral chart and pale green data cards",
+    "accent": "coral",
+    "featured": true,
+    "liveUrl": "https://example.com/aurora-dashboard",
+    "repositoryUrl": "https://github.com/suphawitz/aurora-dashboard",
+    "highlights": [
+      {
+        "label": "Structure",
+        "body": "Built a responsive card system that keeps the most important metrics visible without crowding the screen."
+      },
+      {
+        "label": "Interaction",
+        "body": "Added focused hover and keyboard states so the dashboard remains useful without relying on decorative motion."
+      }
+    ]
+  },
+  {
+    "slug": "field-notes",
+    "title": "Field Notes",
+    "category": "Editorial site",
+    "year": "2026",
+    "summary": "A lightweight reading experience for collecting observations, places, and small stories.",
+    "description": "Field Notes explores how a personal archive can feel warm and tactile while remaining easy to browse on a small screen.",
+    "role": "UI implementation and responsive layout",
+    "technologies": ["React", "Next.js", "CSS Modules"],
+    "image": "/projects/field-notes.svg",
+    "imageAlt": "Editorial notes layout with a warm paper background and green index tabs",
+    "accent": "leaf",
+    "featured": true,
+    "liveUrl": "https://example.com/field-notes",
+    "repositoryUrl": "https://github.com/suphawitz/field-notes",
+    "highlights": [
+      {
+        "label": "Typography",
+        "body": "Created a clear contrast between expressive headings and a practical reading measure for longer notes."
+      },
+      {
+        "label": "Responsive work",
+        "body": "Reworked the desktop index into a single-column mobile reading flow instead of simply shrinking the layout."
+      }
+    ]
+  },
+  {
+    "slug": "atlas-commerce",
+    "title": "Atlas Commerce",
+    "category": "Shopping experience",
+    "year": "2025",
+    "summary": "A focused storefront concept that makes browsing feel simple, visual, and intentional.",
+    "description": "Atlas is a commerce interface exercise focused on product discovery, clear states, and a checkout path with less friction.",
+    "role": "Frontend development",
+    "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "image": "/projects/atlas-commerce.svg",
+    "imageAlt": "Minimal commerce grid with a bright orange product block and navigation rail",
+    "accent": "orange",
+    "featured": true,
+    "liveUrl": "https://example.com/atlas-commerce",
+    "repositoryUrl": "https://github.com/suphawitz/atlas-commerce",
+    "highlights": [
+      {
+        "label": "Product browsing",
+        "body": "Used consistent image ratios and metadata placement to make a mixed product grid feel predictable."
+      },
+      {
+        "label": "States",
+        "body": "Mapped empty, selected, and loading states before styling so the interface stays understandable beyond the happy path."
+      }
+    ]
+  },
+  {
+    "slug": "studio-forms",
+    "title": "Studio Forms",
+    "category": "Internal tool",
+    "year": "2025",
+    "summary": "A friendly form builder concept for teams that need structure without the clutter.",
+    "description": "Studio Forms is a small internal-tool concept that turns repetitive form setup into a more focused and legible flow.",
+    "role": "Frontend development and component design",
+    "technologies": ["React", "TypeScript", "Storybook"],
+    "image": "/projects/studio-forms.svg",
+    "imageAlt": "Form builder interface with stacked fields and a blue preview panel",
+    "accent": "blue",
+    "featured": false,
+    "liveUrl": "https://example.com/studio-forms",
+    "repositoryUrl": "https://github.com/suphawitz/studio-forms",
+    "highlights": [
+      {
+        "label": "Components",
+        "body": "Separated field primitives from page-level composition so the same controls can grow with the product."
+      },
+      {
+        "label": "Usability",
+        "body": "Kept labels, validation messaging, and keyboard order explicit in the interface structure."
+      }
+    ]
+  },
+  {
+    "slug": "pulse-planner",
+    "title": "Pulse Planner",
+    "category": "Planning tool",
+    "year": "2025",
+    "summary": "A quiet weekly planning interface for seeing priorities without overloading the calendar.",
+    "description": "Pulse Planner is a small productivity concept where the visual system is intentionally restrained to keep attention on the work itself.",
+    "role": "Frontend development",
+    "technologies": ["Next.js", "TypeScript", "CSS"],
+    "image": "/projects/pulse-planner.svg",
+    "imageAlt": "Weekly planning board with a dark navy sidebar and lavender task cards",
+    "accent": "violet",
+    "featured": false,
+    "liveUrl": "https://example.com/pulse-planner",
+    "repositoryUrl": "https://github.com/suphawitz/pulse-planner",
+    "highlights": [
+      {
+        "label": "Layout",
+        "body": "Designed the week view as a flexible grid that collapses into a readable list on smaller screens."
+      },
+      {
+        "label": "Feedback",
+        "body": "Used color and small status changes to confirm actions without adding noisy notifications."
+      }
+    ]
+  }
+]
