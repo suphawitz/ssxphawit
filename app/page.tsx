@@ -3,7 +3,7 @@ import { ArticleSection } from "@/components/article-section";
 import { ContactSection } from "@/components/contact-section";
 import { HeroSection } from "@/components/hero-section";
 import { ProjectIndex } from "@/components/project-index";
-import { SiteHeader } from "@/components/site-header";
+import { ScrollReveal } from "@/components/scroll-reveal";
 import { TechMarquee } from "@/components/tech-marquee";
 import { getFeaturedProjects } from "@/lib/projects";
 
@@ -15,14 +15,23 @@ export default function Home() {
       <a className="skip-link" href="#main-content">
         Skip to content
       </a>
-      <SiteHeader />
       <main id="main-content">
         <HeroSection />
-        <ProjectIndex projects={featuredProjects} />
-        <ArticleSection />
-        <AboutSection />
-        <ContactSection />
-        <TechMarquee />
+        <ScrollReveal>
+          <ProjectIndex projects={featuredProjects} />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ArticleSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <AboutSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
+        <ScrollReveal>
+          <TechMarquee />
+        </ScrollReveal>
       </main>
       <footer className="site-footer">
         <span>© 2026 Phawit</span>

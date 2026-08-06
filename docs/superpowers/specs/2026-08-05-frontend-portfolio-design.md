@@ -29,6 +29,7 @@ The first release succeeds when:
 - One responsive homepage.
 - A hero section with name, Frontend Developer role, short positioning statement, and primary work CTA.
 - A hero portrait area on the right with a replaceable local placeholder asset.
+- A fixed global navbar that remains available on the homepage and project detail routes.
 - A selected-work section with 3–5 mock projects, initially showing 3 featured projects.
 - Project cards with category, year, short summary, technologies, and visual preview.
 - Project detail pages at `/work/[slug]` using shared typed project data.
@@ -38,6 +39,7 @@ The first release succeeds when:
 - Subtle interactive motion, hover previews on capable devices, and touch-friendly fallbacks.
 - A mobile burger menu with keyboard-close support and a full-screen navigation panel.
 - A scroll-emphasis article section after selected work, where lines transition from soft gray to near-black as they enter view.
+- Scroll-driven section reveals that run once when each section enters the viewport.
 - A two-row technology marquee in opposite directions, with hover/focus pause and reduced-motion fallback.
 - Metadata, semantic structure, keyboard navigation, visible focus states, alt text, and reduced-motion support.
 
@@ -118,6 +120,7 @@ Project detail routes should resolve by slug and show a framework-appropriate no
 - Tablet: reduce type scale and gutters while retaining the hierarchy.
 - Mobile: single-column flow, compact header, stacked project cards, tap/static project states, readable line lengths, and no horizontal overflow.
 - Mobile navigation: desktop links collapse into a burger trigger; the open panel remains keyboard-accessible and closes on Escape or link selection.
+- Article emphasis: line color is calculated from the current scroll position; no time-based color animation continues after scrolling stops.
 - Touch targets should be comfortably tappable and navigation should remain usable without hover.
 
 ## 10. Verification plan

@@ -5,23 +5,19 @@ export type ArticleLine = {
 
 export const articleLines: ArticleLine[] = [
   {
-    text: "Hi, I’m Phawit — a frontend developer who cares about how the web feels.",
+    text: "Hi, I’m Suphawit — a frontend developer who cares about how the web feels.",
     emphasis: "strong",
   },
   {
-    text: "I turn thoughtful designs into interfaces people can understand without having to think about them.",
+    text: "I turn thoughtful designs into interfaces people can understand and enjoy.",
     emphasis: "medium",
   },
   {
-    text: "From shaping visual systems to building responsive user flows, I’m interested in the details that make digital products feel effortless.",
+    text: "I work with React, Next.js, and TypeScript to build responsive experiences with clear systems and careful details.",
     emphasis: "medium",
   },
   {
-    text: "I work with clarity, systems, and a little curiosity — always looking for the small decision that makes the whole experience better.",
-    emphasis: "soft",
-  },
-  {
-    text: "That’s the work I want to keep making.",
+    text: "I’m always looking for the small decision that makes a digital product feel a little more natural.",
     emphasis: "soft",
   },
 ];
@@ -51,4 +47,12 @@ export function getTechStackRows(items: string[]): TechMarqueeRow[] {
     { direction: "left", items: repeatedItems },
     { direction: "right", items: [...repeatedItems].reverse() },
   ];
+}
+
+export function getScrollProgress(lineTop: number, viewportHeight: number): number {
+  const start = viewportHeight * 0.9;
+  const end = viewportHeight * 0.1;
+  const progress = (start - lineTop) / (start - end);
+
+  return Math.min(1, Math.max(0, Number(progress.toFixed(3))));
 }

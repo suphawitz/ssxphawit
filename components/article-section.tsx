@@ -2,29 +2,44 @@
 
 import { useEffect, useRef } from "react";
 
-import { articleLines } from "@/lib/portfolio";
+import { articleLines, getScrollProgress } from "@/lib/portfolio";
 
 export function ArticleSection() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const section = sectionRef.current;
-    if (!section || !("IntersectionObserver" in window)) return;
+    if (!section) return;
 
     const lines = Array.from(section.querySelectorAll<HTMLElement>("[data-article-line]"));
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            (entry.target as HTMLElement).dataset.visible = "true";
-          }
-        });
-      },
-      { rootMargin: "-12% 0px -12% 0px", threshold: 0.2 },
-    );
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    lines.forEach((line) => observer.observe(line));
-    return () => observer.disconnect();
+    const updateProgress = () => {
+      lines.forEach((line) => {
+        const progress = reducedMotion
+          ? 1
+          : getScrollProgress(line.getBoundingClientRect().top, window.innerHeight);
+        line.style.setProperty("--article-progress", `${progress * 100}%`);
+      });
+    };
+
+    let frame: number | null = null;
+    const handleScroll = () => {
+      if (frame !== null) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = null;
+        updateProgress();
+      });
+    };
+
+    updateProgress();
+    if (reducedMotion) return;
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (frame !== null) window.cancelAnimationFrame(frame);
+    };
   }, []);
 
   return (

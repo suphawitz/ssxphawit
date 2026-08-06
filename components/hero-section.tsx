@@ -18,7 +18,7 @@ export function HeroSection() {
 
           <div className="hero-supporting-copy">
             <p>
-              I&apos;m Phawit, a frontend developer who turns thoughtful design into
+              I&apos;m Suphawit, a frontend developer who turns thoughtful design into
               responsive, useful interfaces.
             </p>
             <a className="text-link" href="#work">
@@ -29,13 +29,13 @@ export function HeroSection() {
 
         <div className="hero-portrait">
           <Image
-            src="/profile-placeholder.svg"
-            alt="Placeholder portrait for Phawit"
+            src="/profile.jpg"
+            alt="Suphawit by a lake"
             fill
             priority
             sizes="(max-width: 800px) 72vw, 30vw"
           />
-          <span className="hero-portrait-label">Replace with your portrait ↗</span>
+          <span className="hero-portrait-label">Frontend developer / Suphawit ↗</span>
         </div>
       </div>
 
