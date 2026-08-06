@@ -293,7 +293,7 @@ a:focus-visible {
 
 .hero-content {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(18rem, 0.55fr);
+  grid-template-columns: minmax(0, 1.2fr) minmax(18rem, 0.8fr);
   align-items: end;
   gap: 3rem;
   padding: 5rem 0 4rem;
@@ -397,7 +397,6 @@ h2 em {
 }
 
 .work-section,
-.article-section,
 .about-section,
 .contact-section {
   border-top: 1px solid var(--line);
@@ -405,6 +404,7 @@ h2 em {
 }
 
 .article-section {
+  padding: clamp(5rem, 10vw, 9rem) 0;
   padding-top: clamp(6rem, 13vw, 12rem);
   padding-bottom: clamp(6rem, 13vw, 12rem);
 }
@@ -431,7 +431,7 @@ h2 em {
   margin: 0;
   color: color-mix(in srgb, var(--foreground) var(--article-progress, 0%), #deddd8);
   font-family: var(--body);
-  font-size: clamp(2.3rem, 6.5vw, 7rem);
+  font-size: clamp(2.3rem, 6.5vw, 6rem);
   font-weight: 600;
   letter-spacing: -0.08em;
   line-height: 0.91;
@@ -446,7 +446,7 @@ h2 em {
 
 .section-heading {
   display: grid;
-  grid-template-columns: 1fr 1.65fr;
+  grid-template-columns: 1fr;
   gap: 2rem;
   margin-bottom: 4.5rem;
 }
@@ -467,7 +467,7 @@ h2 em {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(3rem, 8vw, 8rem) clamp(1rem, 3vw, 3rem);
+  gap: clamp(3rem, 8vw, 4rem) clamp(1rem, 3vw, 3rem);
 }
 
 .project-card:nth-child(2) {
@@ -630,6 +630,7 @@ h2 em {
   color: var(--background);
   margin-inline: calc(clamp(1.25rem, 4vw, 4.5rem) * -1);
   padding-inline: clamp(1.25rem, 4vw, 4.5rem);
+  border-radius: 6.5rem 6.5rem 0 0;
 }
 
 .contact-section .eyebrow,

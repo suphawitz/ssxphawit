@@ -4,14 +4,14 @@ export function ContactSection() {
       <div className="contact-heading">
         <p className="eyebrow">03 / Start a conversation</p>
         <h2 id="contact-title">
-          Have a good project
+          Suphawit
           <br />
-          <em>in mind?</em>
+          <em>Jaikaewma</em>
         </h2>
       </div>
       <div className="contact-actions">
         <p>
-          I&apos;m open to frontend roles, thoughtful collaborations, and the next
+          I'm open to frontend roles, thoughtful collaborations, and the next
           opportunity to make something useful.
         </p>
         <a className="contact-email" href="mailto:hello@phawit.dev">
@@ -24,7 +24,9 @@ export function ContactSection() {
           <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
             LinkedIn ↗
           </a>
-          <a href="/resume.pdf">Resume ↗</a>
+          <a target="_blank" rel="noreferrer" href="/resume.pdf">
+            Resume ↗
+          </a>
         </div>
       </div>
     </section>

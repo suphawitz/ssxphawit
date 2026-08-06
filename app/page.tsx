@@ -18,24 +18,24 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <ScrollReveal>
-          <ProjectIndex projects={featuredProjects} />
-        </ScrollReveal>
-        <ScrollReveal>
           <ArticleSection />
         </ScrollReveal>
         <ScrollReveal>
           <AboutSection />
         </ScrollReveal>
         <ScrollReveal>
-          <ContactSection />
+          <ProjectIndex projects={featuredProjects} />
         </ScrollReveal>
         <ScrollReveal>
           <TechMarquee />
         </ScrollReveal>
+        <ScrollReveal>
+          <ContactSection />
+        </ScrollReveal>
       </main>
       <footer className="site-footer">
-        <span>© 2026 Phawit</span>
-        <span>Made with care in Bangkok</span>
+        <span>© 2026 Suphawit</span>
+        <span>Made with care</span>
       </footer>
     </div>
   );

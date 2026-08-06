@@ -4,7 +4,7 @@ export function HeroSection() {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
       <div className="eyebrow-row">
-        <p className="eyebrow">Frontend developer / Bangkok</p>
+        <p className="eyebrow">Frontend developer</p>
         <p className="eyebrow eyebrow-muted">Scroll to explore ↓</p>
       </div>
 
@@ -12,14 +12,12 @@ export function HeroSection() {
         <div className="hero-copy-column">
           <h1 id="hero-title">
             I build the web
-            <br />
-            <em>with intention.</em>
+            <em> with intention.</em>
           </h1>
 
-          <div className="hero-supporting-copy">
+          <div className="hero-supporting-copy pt-4">
             <p>
-              I&apos;m Suphawit, a frontend developer who turns thoughtful design into
-              responsive, useful interfaces.
+              Building thoughtful digital experiences that combine engineering, design and human-centered thinking.
             </p>
             <a className="text-link" href="#work">
               See selected work <span aria-hidden="true">↓</span>

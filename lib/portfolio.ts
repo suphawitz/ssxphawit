@@ -2,22 +2,14 @@ export type ArticleLine = {
   text: string;
   emphasis: "strong" | "medium" | "soft";
 };
-
+  
 export const articleLines: ArticleLine[] = [
   {
-    text: "Hi, I’m Suphawit — a frontend developer who cares about how the web feels.",
+    text: "Life is a journey of becoming. Every mistake teaches, every challenge strengthens,",
     emphasis: "strong",
   },
   {
-    text: "I turn thoughtful designs into interfaces people can understand and enjoy.",
-    emphasis: "medium",
-  },
-  {
-    text: "I work with React, Next.js, and TypeScript to build responsive experiences with clear systems and careful details.",
-    emphasis: "medium",
-  },
-  {
-    text: "I’m always looking for the small decision that makes a digital product feel a little more natural.",
+    text: " and every choice shapes who we are.Trust your path, keep learning, and never stop building the life you truly believe in.",
     emphasis: "soft",
   },
 ];

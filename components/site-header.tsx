@@ -19,7 +19,7 @@ export function SiteHeader() {
   return (
     <header className={`site-header${isScrolled ? " is-scrolled" : ""}`}>
       <Link className="site-brand" href="/" aria-label="Phawit home">
-        PH<span aria-hidden="true">↗</span>
+        sxpha<span aria-hidden="true">↗</span>
       </Link>
 
       <nav className="site-nav" aria-label="Main navigation">
@@ -29,7 +29,7 @@ export function SiteHeader() {
       </nav>
 
       <div className="site-header-actions">
-        <a className="availability-pill" href="mailto:hello@phawit.dev">
+        <a className="availability-pill" href="mailto:suphawit.aum.si@gmail.com">
           <span className="availability-dot" aria-hidden="true" />
           Available for opportunities
         </a>

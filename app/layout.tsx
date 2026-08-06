@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Phawit — Frontend Developer",
-    template: "%s — Phawit",
+    default: "ssxphawit | Suphawit",
+    template: "Suphawit",
   },
   description:
-    "Portfolio of Phawit, a frontend developer building thoughtful, responsive digital experiences.",
+    "Portfolio of Suphawit Jaikaewma, a frontend developer building thoughtful, responsive digital experiences.",
 };
 
 export default function RootLayout({

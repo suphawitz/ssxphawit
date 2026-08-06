@@ -48,10 +48,10 @@ export function ArticleSection() {
       <h2 id="article-title" className="sr-only">
         A short introduction
       </h2>
-      <div className="article-copy">
+      <div className="article-copy flex flex-col items-center">
         {articleLines.map((line) => (
           <p
-            className={`article-line article-line-${line.emphasis}`}
+            className={`text-center article-line article-line-${line.emphasis}`}
             data-article-line
             key={line.text}
           >
