@@ -5,6 +5,7 @@ import { HeroSection } from "@/components/hero-section";
 import { ProjectIndex } from "@/components/project-index";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { TechMarquee } from "@/components/tech-marquee";
+import { WorkTogetherMarquee } from "@/components/work-together-marquee";
 import { getFeaturedProjects } from "@/lib/projects";
 
 export default function Home() {
@@ -28,6 +29,9 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal>
           <ProjectIndex projects={featuredProjects} />
+        </ScrollReveal>
+        <ScrollReveal>
+          <WorkTogetherMarquee />
         </ScrollReveal>
         <ScrollReveal>
           <ContactSection />

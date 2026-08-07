@@ -39,7 +39,13 @@ export function MobileMenu() {
       >
         <div className="mobile-menu-panel-topline">
           <span>Navigation</span>
-          <span>PH ↗</span>
+          <button
+            className="mobile-menu-close"
+            type="button"
+            onClick={() => setIsOpen(false)}
+          >
+            Close <span aria-hidden="true">×</span>
+          </button>
         </div>
         <nav aria-label="Mobile navigation">
           <Link href="/#about" onClick={() => setIsOpen(false)}>
@@ -52,6 +58,14 @@ export function MobileMenu() {
             Contact <span aria-hidden="true">↗</span>
           </Link>
         </nav>
+        <button
+          className="mobile-menu-dismiss"
+          type="button"
+          aria-label="Close navigation menu"
+          onClick={() => setIsOpen(false)}
+        >
+          <span>Tap here to close</span>
+        </button>
         <p>Frontend developer / Bangkok</p>
       </div>
     </div>

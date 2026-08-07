@@ -24,6 +24,7 @@
 }
 
 html {
+  container-type: inline-size;
   scroll-behavior: smooth;
 }
 
@@ -207,6 +208,7 @@ a:focus-visible {
   min-height: 100dvh;
   display: flex;
   flex-direction: column;
+  overflow-y: auto;
   background: var(--surface-dark);
   color: var(--background);
   opacity: 0;
@@ -233,6 +235,24 @@ a:focus-visible {
   text-transform: uppercase;
 }
 
+.mobile-menu-close {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.mobile-menu-close span {
+  font-size: 1.2rem;
+  line-height: 0.7;
+}
+
 .mobile-menu-panel nav {
   display: grid;
   padding: 8rem 1.25rem 2rem;
@@ -254,8 +274,27 @@ a:focus-visible {
   color: #a9d29d;
 }
 
+.mobile-menu-dismiss {
+  display: flex;
+  width: 100%;
+  min-height: 6rem;
+  flex: 1;
+  align-items: flex-end;
+  justify-content: flex-end;
+  border: 0;
+  border-top: 1px solid #3b4d45;
+  background: transparent;
+  padding: 1rem 1.25rem;
+  color: #aeb6af;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .mobile-menu-panel > p {
-  margin: auto 1.25rem 2rem;
+  margin: 0 1.25rem 2rem;
   color: #aeb6af;
   font-size: 0.7rem;
   letter-spacing: 0.08em;
@@ -389,6 +428,26 @@ h2 em {
   padding-bottom: 0.25rem;
   font-size: 0.78rem;
   letter-spacing: 0.04em;
+}
+
+.all-work-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-top: 1.5rem;
+  border: 1px solid var(--foreground);
+  border-radius: 999px;
+  padding: 0.7rem 0.9rem;
+  color: var(--foreground);
+  font-size: 0.72rem;
+  letter-spacing: 0.03em;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.all-work-link:hover,
+.all-work-link:focus-visible {
+  background: var(--foreground);
+  color: var(--background);
 }
 
 .hero-footer {

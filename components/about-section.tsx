@@ -22,7 +22,7 @@ export function AboutSection() {
           <h2 id="work-title">
             A few things
             <br />
-            I've built.
+            I&apos;ve built.
           </h2>
           <p className="section-intro">
             Some context, a few tools, and the way I like to work.

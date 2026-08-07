@@ -56,3 +56,37 @@ Run: `npm run lint`
 Run: `npm run build`
 
 Expected: no whitespace errors, ESLint exits with code 0, and Next.js prerenders `/`, `/work`, and `/work/[slug]` successfully.
+
+---
+
+### Task 2: Make the marquee full-bleed
+
+**Files:**
+- Modify: `components/work-together-marquee.module.css`
+- Modify: `app/globals.css`
+
+**Interfaces:**
+- Consumes: the existing `WorkTogetherMarquee` section and its scoped CSS Module.
+- Produces: an edge-to-edge marquee that remains in the existing homepage content order.
+
+- [ ] **Step 1: Capture the current contained layout**
+
+Inspect the section width against the viewport width and confirm the marquee is constrained by `.site-shell`.
+
+- [ ] **Step 2: Apply the full-bleed layout**
+
+Make `html` an inline-size query container. Set the section to `width: 100cqw`, position it with `margin-left: calc(50% - 50cqw)`, and remove the container-padding compensation from `margin-inline`. Using query-container units excludes desktop scrollbar width without globally hiding overflow.
+
+- [ ] **Step 3: Verify viewport coverage**
+
+Confirm the section starts at viewport x-coordinate `0`, matches the viewport width, and does not increase the document scroll width on desktop or mobile.
+
+- [ ] **Step 4: Verify project health**
+
+Run: `git diff --check`
+
+Run: `npm run lint`
+
+Run: `npm run build`
+
+Expected: no whitespace errors, ESLint exits with code 0, and the production build succeeds.
