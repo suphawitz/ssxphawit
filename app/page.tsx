@@ -24,10 +24,10 @@ export default function Home() {
           <AboutSection />
         </ScrollReveal>
         <ScrollReveal>
-          <ProjectIndex projects={featuredProjects} />
+          <TechMarquee />
         </ScrollReveal>
         <ScrollReveal>
-          <TechMarquee />
+          <ProjectIndex projects={featuredProjects} />
         </ScrollReveal>
         <ScrollReveal>
           <ContactSection />

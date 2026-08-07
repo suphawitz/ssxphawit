@@ -16,9 +16,18 @@ export function AboutSection() {
       id="about"
       aria-labelledby="about-title"
     >
-      <div className="bento-section-heading">
-        <p className="eyebrow">03 / About me</p>
-        <p>Some context, a few tools, and the way I like to work.</p>
+      <div className="section-heading">
+        <p className="eyebrow">01 / About me</p>
+        <div>
+          <h2 id="work-title">
+            A few things
+            <br />
+            I've built.
+          </h2>
+          <p className="section-intro">
+            Some context, a few tools, and the way I like to work.
+          </p>
+        </div>
       </div>
 
       <div className="about-bento">

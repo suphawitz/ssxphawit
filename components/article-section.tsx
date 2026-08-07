@@ -66,7 +66,7 @@ export function ArticleSection() {
       className="article-section"
       aria-labelledby="article-title"
     >
-      <p className="eyebrow">02 / A short introduction</p>
+      <p className="eyebrow">A short introduction</p>
       <h2 id="article-title" className="sr-only">
         A short introduction
       </h2>

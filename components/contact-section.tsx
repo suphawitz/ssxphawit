@@ -2,7 +2,7 @@ export function ContactSection() {
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
       <div className="contact-heading">
-        <p className="eyebrow">03 / Start a conversation</p>
+        <p className="eyebrow pb-4">03 / Start a conversation</p>
         <h2 id="contact-title">
           Suphawit
           <br />

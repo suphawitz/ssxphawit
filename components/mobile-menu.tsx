@@ -42,11 +42,11 @@ export function MobileMenu() {
           <span>PH ↗</span>
         </div>
         <nav aria-label="Mobile navigation">
-          <Link href="/#work" onClick={() => setIsOpen(false)}>
-            Work <span aria-hidden="true">↗</span>
-          </Link>
           <Link href="/#about" onClick={() => setIsOpen(false)}>
             About <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/#work" onClick={() => setIsOpen(false)}>
+            Work <span aria-hidden="true">↗</span>
           </Link>
           <Link href="/#contact" onClick={() => setIsOpen(false)}>
             Contact <span aria-hidden="true">↗</span>
