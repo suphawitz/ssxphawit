@@ -63,14 +63,26 @@ export const toolIcons: ToolIcon[] = [
 
 export type TechMarqueeRow = {
   direction: "left" | "right";
-  items: string[];
+  items: ToolIcon[];
 };
 
-export function getTechStackRows(items: string[]): TechMarqueeRow[] {
-  const repeatedItems = [...items, ...items, ...items];
+export function getTechStackRows(items: ToolIcon[]): TechMarqueeRow[] {
+  const frontendNames = new Set([
+    "HTML5",
+    "CSS3",
+    "JavaScript",
+    "React",
+    "Next.js",
+  ]);
 
   return [
-    { direction: "left", items: repeatedItems },
-    { direction: "right", items: [...repeatedItems].reverse() },
+    {
+      direction: "left",
+      items: items.filter((item) => frontendNames.has(item.name)),
+    },
+    {
+      direction: "right",
+      items: items.filter((item) => !frontendNames.has(item.name)),
+    },
   ];
 }

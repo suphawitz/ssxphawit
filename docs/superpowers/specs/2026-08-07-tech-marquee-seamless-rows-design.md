@@ -18,6 +18,8 @@ Give each TechMarquee row a distinct icon set and remove the visible snap when a
 
 Each row renders two identical copies of its own base icon group inside one track. Spacing belongs to each group, including trailing spacing, so both groups have exactly the same rendered width. The left-moving row animates from `translateX(0)` to `translateX(-50%)`; the right-moving row animates from `translateX(-50%)` to `translateX(0)`.
 
+Each group repeats its base icon set three times so one group remains longer than the maximum `1440px` content row on wide screens. The animation duration scales with that threefold content length so the perceived pixel speed stays consistent.
+
 This replaces the current three-copy flat list. The flat list has 26 gaps across 27 icons, so one third of the track width does not equal one nine-icon sequence plus its boundary gap. That mismatch causes the visible reset snap.
 
 ## Motion and accessibility

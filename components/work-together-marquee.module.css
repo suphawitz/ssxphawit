@@ -7,8 +7,8 @@
 
 .row {
   overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
+  /* border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line); */
   padding: clamp(1.5rem, 3vw, 2.5rem) 0;
 }
 

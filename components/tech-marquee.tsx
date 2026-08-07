@@ -1,4 +1,8 @@
+import Image from "next/image";
+
 import { getTechStackRows, toolIcons } from "@/lib/portfolio";
+
+const GROUP_REPEAT_COUNT = 3;
 
 export function TechMarquee() {
   const rows = getTechStackRows(toolIcons);
@@ -9,7 +13,6 @@ export function TechMarquee() {
         <p className="eyebrow" id="tech-stack-title">
           Tools, thinking, and the stack in between
         </p>
-        {/* <span className="tech-marquee-note">Hover to pause</span> */}
       </div>
       <div className="tech-marquee" aria-label="Tech stack">
         {rows.map((row, rowIndex) => (
@@ -18,12 +21,32 @@ export function TechMarquee() {
             key={`${row.direction}-${rowIndex}`}
           >
             <div className="tech-marquee-track">
-              {row.items.map((technology, itemIndex) => (
-                // <span className="tech-marquee-item" key={`${technology}-${itemIndex}`}>
-                //   <span aria-hidden="true">✦</span>
-                //   {technology}
-                // </span>
-                <img src={`/public${toolIcons.find((t) => t.src === technology)?.src}`} alt={toolIcons.find((t) => t.name === technology)?.alt} />
+              {[false, true].map((isDuplicate) => (
+                <div
+                  className="tech-marquee-group"
+                  aria-hidden={isDuplicate || undefined}
+                  key={isDuplicate ? "duplicate" : "original"}
+                >
+                  {Array.from({ length: GROUP_REPEAT_COUNT }, (_, cycleIndex) =>
+                    row.items.map((technology) => (
+                      <span
+                        className="tech-marquee-item"
+                        key={`${technology.name}-${cycleIndex}`}
+                      >
+                        <Image
+                          className="tech-marquee-icon"
+                          src={technology.src}
+                          alt={
+                            isDuplicate || cycleIndex > 0 ? "" : technology.alt
+                          }
+                          width={128}
+                          height={128}
+                          sizes="(max-width: 720px) 52px, 80px"
+                        />
+                      </span>
+                    )),
+                  )}
+                </div>
               ))}
             </div>
           </div>
