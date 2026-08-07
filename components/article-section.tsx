@@ -1,62 +1,41 @@
-"use client";
+import Image from "next/image";
 
-import { useEffect, useRef } from "react";
-
-import { articleLines, getScrollProgress } from "@/lib/portfolio";
+import { articleLines, getToolIconRows, toolIcons } from "@/lib/portfolio";
 
 export function ArticleSection() {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const section = sectionRef.current;
-    if (!section) return;
-
-    const lines = Array.from(section.querySelectorAll<HTMLElement>("[data-article-line]"));
-    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const updateProgress = () => {
-      lines.forEach((line) => {
-        const progress = reducedMotion
-          ? 1
-          : getScrollProgress(line.getBoundingClientRect().top, window.innerHeight);
-        line.style.setProperty("--article-progress", `${progress * 100}%`);
-      });
-    };
-
-    let frame: number | null = null;
-    const handleScroll = () => {
-      if (frame !== null) return;
-      frame = window.requestAnimationFrame(() => {
-        frame = null;
-        updateProgress();
-      });
-    };
-
-    updateProgress();
-    if (reducedMotion) return;
-
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (frame !== null) window.cancelAnimationFrame(frame);
-    };
-  }, []);
+  const rows = getToolIconRows(toolIcons);
 
   return (
-    <section className="article-section" ref={sectionRef} aria-labelledby="article-title">
-      <p className="eyebrow">02 / A short introduction</p>
-      <h2 id="article-title" className="sr-only">
-        A short introduction
-      </h2>
-      <div className="article-copy flex flex-col items-center">
-        {articleLines.map((line) => (
-          <p
-            className={`text-center article-line article-line-${line.emphasis}`}
-            data-article-line
-            key={line.text}
+    <section className="article-section tool-section" aria-labelledby="article-title">
+      <div className="tool-section-heading">
+        <div>
+          <p className="eyebrow">02 / Tools I use</p>
+          <h2 id="article-title">
+            A small toolkit
+            <br />
+            <em>for thoughtful work.</em>
+          </h2>
+        </div>
+        <p className="tool-section-intro">
+          {articleLines.map((line) => line.text).join(" ")}
+        </p>
+      </div>
+
+      <div className="tool-icon-marquee" aria-label="Tools and technologies">
+        {rows.map((row, rowIndex) => (
+          <div
+            className={`tool-icon-row tool-icon-${row.direction}`}
+            key={`${row.direction}-${rowIndex}`}
           >
-            {line.text}
-          </p>
+            <div className="tool-icon-track">
+              {row.items.map((tool, itemIndex) => (
+                <div className="tool-icon-card" key={`${tool.name}-${itemIndex}`}>
+                  <Image src={tool.src} alt={tool.alt} width={64} height={64} />
+                  <span>{tool.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         ))}
       </div>
     </section>

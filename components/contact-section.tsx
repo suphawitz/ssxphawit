@@ -11,7 +11,7 @@ export function ContactSection() {
       </div>
       <div className="contact-actions">
         <p>
-          I'm open to frontend roles, thoughtful collaborations, and the next
+          I&apos;m open to frontend roles, thoughtful collaborations, and the next
           opportunity to make something useful.
         </p>
         <a className="contact-email" href="mailto:hello@phawit.dev">

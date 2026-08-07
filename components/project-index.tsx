@@ -11,7 +11,7 @@ export function ProjectIndex({ projects }: { projects: Project[] }) {
           <h2 id="work-title">
             A few things
             <br />
-            I've built.
+            I&apos;ve built.
           </h2>
           <p className="section-intro">
             Small frontend projects, made with care for the interface and the

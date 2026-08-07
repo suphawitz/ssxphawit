@@ -30,6 +30,7 @@ The first release succeeds when:
 - A hero section with name, Frontend Developer role, short positioning statement, and primary work CTA.
 - A hero portrait area on the right with a replaceable local placeholder asset.
 - A fixed global navbar that remains available on the homepage and project detail routes.
+- A responsive mobile navigation panel with an opaque full-viewport background.
 - A selected-work section with 3–5 mock projects, initially showing 3 featured projects.
 - Project cards with category, year, short summary, technologies, and visual preview.
 - Project detail pages at `/work/[slug]` using shared typed project data.
@@ -39,8 +40,10 @@ The first release succeeds when:
 - Subtle interactive motion, hover previews on capable devices, and touch-friendly fallbacks.
 - A mobile burger menu with keyboard-close support and a full-screen navigation panel.
 - A scroll-emphasis article section after selected work, where lines transition from soft gray to near-black as they enter view.
+- A tool-icon section using local assets from `public/tools`, with two continuously moving rows that do not pause on hover.
 - Scroll-driven section reveals that run once when each section enters the viewport.
-- A two-row technology marquee in opposite directions, with hover/focus pause and reduced-motion fallback.
+- A two-row technology marquee in opposite directions with a reduced-motion fallback; hover must not pause the movement.
+- A bento-grid about section with profile, focus, portrait, resume, tools, and working-principle cards.
 - Metadata, semantic structure, keyboard navigation, visible focus states, alt text, and reduced-motion support.
 
 ### Out of scope for the first release
@@ -120,6 +123,7 @@ Project detail routes should resolve by slug and show a framework-appropriate no
 - Tablet: reduce type scale and gutters while retaining the hierarchy.
 - Mobile: single-column flow, compact header, stacked project cards, tap/static project states, readable line lengths, and no horizontal overflow.
 - Mobile navigation: desktop links collapse into a burger trigger; the open panel remains keyboard-accessible and closes on Escape or link selection.
+- Mobile menu background: the open panel must cover the viewport with an opaque surface and must not inherit a transformed containing block from the fixed header.
 - Article emphasis: line color is calculated from the current scroll position; no time-based color animation continues after scrolling stops.
 - Touch targets should be comfortably tappable and navigation should remain usable without hover.
 

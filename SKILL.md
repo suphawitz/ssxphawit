@@ -11,6 +11,7 @@ Build a polished, honest, and extensible personal portfolio for a Frontend Devel
 3. **Human details** — add approachable labels, small transitions, and tactile project interactions without turning the page into a demo reel.
 4. **Proof over claims** — show what was built, the problem it addressed, the contribution made, and the technologies used.
 5. **Responsive by design** — desktop hover interactions become tap or static states on touch devices.
+6. **Responsive with every change** — every new or modified component must be checked at mobile, tablet, and desktop widths; a visual change is incomplete until its layout, interaction, overflow, and focus behavior are considered at each breakpoint.
 
 ## Required workflow
 
@@ -20,6 +21,8 @@ Build a polished, honest, and extensible personal portfolio for a Frontend Devel
 - Prefer CSS transitions and small client components for interaction; add a dependency only when it materially improves the experience.
 - Add an accessible fallback for every visual interaction.
 - Test loading, empty or missing project data, mobile layout, keyboard navigation, and reduced-motion preferences.
+- For every UI change, verify at least one narrow mobile viewport, one tablet viewport, and one desktop viewport. Check menu backgrounds, grid gutters, image cropping, text wrapping, horizontal overflow, touch targets, hover/tap fallbacks, and keyboard focus.
+- Prefer CSS responsive rules and progressive enhancement over JavaScript viewport checks. If a component behaves differently on touch, provide a non-hover fallback rather than hiding essential content.
 
 ## Content rules
 
