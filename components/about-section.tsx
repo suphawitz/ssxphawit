@@ -20,9 +20,8 @@ export function AboutSection() {
         <p className="eyebrow">01 / About me</p>
         <div>
           <h2 id="work-title">
-            A few things
-            <br />
-            I&apos;ve built.
+            Detail-minded, <br />
+            <em> curious by default.</em>
           </h2>
           <p className="section-intro">
             Some context, a few tools, and the way I like to work.

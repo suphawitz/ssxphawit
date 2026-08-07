@@ -1,7 +1,7 @@
-import { getTechStackRows, techStack } from "@/lib/portfolio";
+import { getTechStackRows, toolIcons } from "@/lib/portfolio";
 
 export function TechMarquee() {
-  const rows = getTechStackRows(techStack);
+  const rows = getTechStackRows(toolIcons);
 
   return (
     <section className="tech-marquee-section" aria-labelledby="tech-stack-title">
@@ -9,7 +9,7 @@ export function TechMarquee() {
         <p className="eyebrow" id="tech-stack-title">
           Tools, thinking, and the stack in between
         </p>
-        <span className="tech-marquee-note">Hover to pause</span>
+        {/* <span className="tech-marquee-note">Hover to pause</span> */}
       </div>
       <div className="tech-marquee" aria-label="Tech stack">
         {rows.map((row, rowIndex) => (
@@ -19,10 +19,11 @@ export function TechMarquee() {
           >
             <div className="tech-marquee-track">
               {row.items.map((technology, itemIndex) => (
-                <span className="tech-marquee-item" key={`${technology}-${itemIndex}`}>
-                  <span aria-hidden="true">✦</span>
-                  {technology}
-                </span>
+                // <span className="tech-marquee-item" key={`${technology}-${itemIndex}`}>
+                //   <span aria-hidden="true">✦</span>
+                //   {technology}
+                // </span>
+                <img src={`/public${toolIcons.find((t) => t.src === technology)?.src}`} alt={toolIcons.find((t) => t.name === technology)?.alt} />
               ))}
             </div>
           </div>

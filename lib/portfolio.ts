@@ -13,11 +13,11 @@ export const articleLines: ArticleLine[] = [
     emphasis: "strong",
   },
   {
-    text: " and every choice shapes who we are. ",
+    text: " and every choice shapes who we are. Trust your path, ",
     emphasis: "medium",
   },
   {
-    text: "Trust your path, keep learning, and never stop building the life you truly believe in.",
+    text: "keep learning, and never stop building the life you truly believe in.",
     emphasis: "soft",
   },
 ];
