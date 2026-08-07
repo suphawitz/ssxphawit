@@ -1,5 +1,8 @@
 import styles from "./work-together-marquee.module.css";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faStarOfLife } from "@fortawesome/free-solid-svg-icons";
+
 const MESSAGE_COUNT = 6;
 
 function MarqueeGroup() {
@@ -7,7 +10,8 @@ function MarqueeGroup() {
     <div className={styles.group}>
       {Array.from({ length: MESSAGE_COUNT }, (_, index) => (
         <span className={styles.item} key={index}>
-          Let’s work together <span aria-hidden="true">*</span>
+          Let’s work together <span aria-hidden="true"><FontAwesomeIcon icon={faStarOfLife} className={styles.icon} aria-hidden="true" /></span>
+          
         </span>
       ))}
     </div>

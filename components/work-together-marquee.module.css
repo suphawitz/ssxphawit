@@ -23,8 +23,8 @@
   display: flex;
   flex-shrink: 0;
   align-items: center;
-  gap: clamp(1.5rem, 4vw, 4rem);
-  padding-right: clamp(1.5rem, 4vw, 4rem);
+  gap: clamp(1.2rem, 2vw, 3rem);
+  padding-right: clamp(1.2rem, 2vw, 3rem);
 }
 
 .item {
@@ -36,12 +36,23 @@
   font-size: clamp(3rem, 8vw, 8rem);
   letter-spacing: -0.07em;
   line-height: 0.82;
+
+  /* 1. กำหนดสีภายในตัวอักษรให้เป็นโปร่งใส */
+  -webkit-text-fill-color: transparent; 
+  /* หรือ color: transparent; ก็ได้ผลเช่นกันในเบราว์เซอร์สมัยใหม่ */
+  
+  /* 2. กำหนดความกว้างของเส้นขอบ */
+  -webkit-text-stroke-width: 1.5px; 
+  
+  /* 3. กำหนดสีของเส้นขอบ (ใช้สีเทาเข้มแบบโปร่งใสเพื่อให้ดูนุ่มนวลเหมือนในภาพ) */
+  -webkit-text-stroke-color: rgba(0, 0, 0, 0.5);
 }
 
 .item > span {
   color: var(--accent);
   font-family: var(--body);
   font-style: normal;
+  font-size: clamp(1.5rem, 4vw, 3rem);
 }
 
 @keyframes move-right {

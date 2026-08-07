@@ -754,6 +754,101 @@ h2 em {
   background: #f2d3bf;
 }
 
+.education-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+
+.education-logo {
+  width: clamp(3rem, 5vw, 4rem);
+  height: clamp(3rem, 5vw, 4rem);
+  flex: 0 0 auto;
+  border-radius: 0.8rem;
+  background: var(--surface);
+  object-fit: contain;
+  padding: 0.25rem;
+}
+
+.education-school,
+.education-period,
+.education-degree h3,
+.education-degree p,
+.education-gpa span,
+.education-gpa strong {
+  margin: 0;
+}
+
+.education-school {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.education-period {
+  margin-top: 0.25rem;
+  color: var(--muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.04em;
+}
+
+.education-degree {
+  margin-top: auto;
+  padding-top: 2rem;
+}
+
+.education-degree h3 {
+  max-width: 14rem;
+  font-family: var(--display);
+  font-size: clamp(1.55rem, 2.5vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.92;
+}
+
+.education-degree p {
+  max-width: 13rem;
+  margin-top: 0.75rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  line-height: 1.4;
+}
+
+.education-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.education-footer .availability-status {
+  margin: 0;
+  font-size: 0.6rem;
+}
+
+.education-gpa {
+  display: grid;
+  justify-items: end;
+  gap: 0.2rem;
+  flex: 0 0 auto;
+}
+
+.education-gpa span {
+  color: var(--muted);
+  font-size: 0.56rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.education-gpa strong {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 400;
+  letter-spacing: -0.07em;
+  line-height: 0.8;
+}
+
 .availability-status {
   display: flex;
   align-items: center;
@@ -785,6 +880,67 @@ h2 em {
   grid-area: projects;
   justify-content: space-between;
   background: var(--surface);
+}
+
+.about-awards-card {
+  grid-area: projects;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--surface);
+}
+
+.award-heading {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.award-symbol {
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.award-heading p {
+  max-width: 13rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.7rem;
+  line-height: 1.4;
+}
+
+.award-list {
+  display: grid;
+  gap: 0.75rem;
+  margin: auto 0 0;
+  padding: 1.25rem 0 0;
+  list-style: none;
+}
+
+.award-list li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: baseline;
+  gap: 0.65rem;
+  border-top: 1px solid var(--line);
+  padding-top: 0.7rem;
+}
+
+.award-list li > span {
+  color: var(--accent);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.award-list strong {
+  font-family: var(--display);
+  font-size: clamp(1rem, 1.6vw, 1.35rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
 }
 
 .about-stack-card {

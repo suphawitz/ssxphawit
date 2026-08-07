@@ -30,28 +30,53 @@ export function AboutSection() {
       </div>
 
       <div className="about-bento">
-        <article className="about-bento-card about-availability-card">
+        <article className="about-bento-card about-availability-card" id="education">
           <p className="bento-label">Education</p>
-          <div className="availability-status">
-            <span className="availability-status-dot" aria-hidden="true" />
-            <span>Software house teams</span>
+          <div className="education-header">
+            <Image
+              className="education-logo"
+              src="/logoMJU.png"
+              alt="Maejo University logo"
+              width={56}
+              height={56}
+            />
+            <div>
+              <p className="education-school">Maejo University</p>
+              <p className="education-period">2023 — now</p>
+            </div>
           </div>
-          <div>
-            img /public/logoMJU.png
-            Bachelor of Business Administration
-            Major in Digital Business Innovation (DBI)
-            Maejo Usniversity 2023 - now
-
-            GPA: 3.85
-            <strong className="bento-stat">75%</strong>
-            <p className="bento-card-note">Design sense / engineering detail</p>
+          <div className="education-degree">
+            <h3>Bachelor of Business Administration</h3>
+            <p>Major in Digital Business Innovation (DBI)</p>
+          </div>
+          <div className="education-footer">
+            <div className="availability-status">
+              <span className="availability-status-dot" aria-hidden="true" />
+              <span>Open to software-house teams</span>
+            </div>
+            <div className="education-gpa">
+              <span>Current GPA</span>
+              <strong>3.85</strong>
+            </div>
           </div>
         </article>
 
-        <article className="about-bento-card about-projects-card">
+        <article className="about-bento-card about-awards-card" id="award">
           <p className="bento-label">Award</p>
-          Academic Excellence Award 2024
-          Academic Excellence Award 2023
+          <div className="award-heading">
+            <span className="award-symbol" aria-hidden="true">✦</span>
+            <p>Recognised for consistent academic performance.</p>
+          </div>
+          <ul className="award-list">
+            <li>
+              <span>2024</span>
+              <strong>Academic Excellence Award</strong>
+            </li>
+            <li>
+              <span>2023</span>
+              <strong>Academic Excellence Award</strong>
+            </li>
+          </ul>
         </article>
 
         <article className="about-bento-card about-stack-card">
