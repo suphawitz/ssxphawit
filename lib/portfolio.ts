@@ -53,12 +53,17 @@ export const toolIcons: ToolIcon[] = [
   { name: "HTML5", src: "/tools/html5.png", alt: "HTML5 logo" },
   { name: "CSS3", src: "/tools/css-3.png", alt: "CSS3 logo" },
   { name: "JavaScript", src: "/tools/js.png", alt: "JavaScript logo" },
-  { name: "React", src: "/tools/react.png", alt: "React logo" },
+  // { name: "React", src: "/tools/react.png", alt: "React logo" },
   { name: "Next.js", src: "/tools/nextjs.svg", alt: "Next.js logo" },
-  { name: "Figma", src: "/tools/figma.png", alt: "Figma logo" },
   { name: "GitHub", src: "/tools/github.png", alt: "GitHub logo" },
+  { name: "Figma", src: "/tools/figma.png", alt: "Figma logo" },
   { name: "GPT", src: "/tools/gpt.png", alt: "GPT logo" },
-  { name: "Supabase", src: "/tools/supabase.png", alt: "Supabase logo" },
+  { name: "Word", src: "/tools/word.svg", alt: "Word logo" },
+  { name: "Excel", src: "/tools/excel.svg", alt: "Excel logo" },
+  { name: "Postman", src: "/tools/postman.svg", alt: "Postman logo" },
+  { name: "Docker", src: "/tools/docker.svg", alt: "Docker logo" },
+  { name: "Php", src: "/tools/php.svg", alt: "Php logo" },
+  { name: "Vercel", src: "/tools/vercel.svg", alt: "Vercel logo" },
 ];
 
 export type TechMarqueeRow = {
@@ -71,7 +76,7 @@ export function getTechStackRows(items: ToolIcon[]): TechMarqueeRow[] {
     "HTML5",
     "CSS3",
     "JavaScript",
-    "React",
+    "Php",
     "Next.js",
   ]);
 

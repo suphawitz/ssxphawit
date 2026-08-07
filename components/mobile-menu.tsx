@@ -64,9 +64,8 @@ export function MobileMenu() {
           aria-label="Close navigation menu"
           onClick={() => setIsOpen(false)}
         >
-          <span>Tap here to close</span>
         </button>
-        <p>Frontend developer / Bangkok</p>
+        <p>Tap here to close</p>
       </div>
     </div>
   );

@@ -205,7 +205,7 @@ a:focus-visible {
   inset: 0;
   z-index: 10;
   width: 100vw;
-  min-height: 100dvh;
+  min-height: 80dvh;
   display: flex;
   flex-direction: column;
   overflow-y: auto;
@@ -282,7 +282,6 @@ a:focus-visible {
   align-items: flex-end;
   justify-content: flex-end;
   border: 0;
-  border-top: 1px solid #3b4d45;
   background: transparent;
   padding: 1rem 1.25rem;
   color: #aeb6af;
@@ -1267,7 +1266,7 @@ h2 em {
 .tech-marquee-section {
   overflow: hidden;
   margin-inline: calc(clamp(1.25rem, 4vw, 4.5rem) * -1);
-  padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem);
+  padding-bottom: clamp(3rem, 6vw, 5rem);
 }
 
 .tech-marquee-heading {
@@ -1511,6 +1510,7 @@ h2 em {
 
   .about-photo-card {
     min-height: 20rem;
+    aspect-ratio: 2;
   }
 
   .about-bento-card {
@@ -1571,12 +1571,13 @@ h2 em {
   }
 
   .hero-portrait {
-    width: min(72vw, 23rem);
+    width: 100%;
+    max-width: 512px;
     min-height: 24rem;
-    justify-self: end;
+    justify-self: center;
   }
 
-  .section-heading,
+  .section-heading, 
   .about-grid,
   .contact-section {
     gap: 3rem;
@@ -1602,7 +1603,7 @@ h2 em {
   .about-photo-card {
     order: -1;
     min-height: 20rem;
-    aspect-ratio: 0.9;
+    aspect-ratio: 1;
   }
 
   .about-photo-overlay {

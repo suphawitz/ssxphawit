@@ -41,7 +41,7 @@ export function TechMarquee() {
                           }
                           width={128}
                           height={128}
-                          sizes="(max-width: 720px) 52px, 80px"
+                          sizes="(max-width: 720px) 62px, 90px"
                         />
                       </span>
                     )),

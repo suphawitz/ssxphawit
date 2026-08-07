@@ -31,21 +31,27 @@ export function AboutSection() {
 
       <div className="about-bento">
         <article className="about-bento-card about-availability-card">
-          <p className="bento-label">Open to frontend roles</p>
+          <p className="bento-label">Education</p>
           <div className="availability-status">
             <span className="availability-status-dot" aria-hidden="true" />
             <span>Software house teams</span>
           </div>
           <div>
+            img /public/logoMJU.png
+            Bachelor of Business Administration
+            Major in Digital Business Innovation (DBI)
+            Maejo Usniversity 2023 - now
+
+            GPA: 3.85
             <strong className="bento-stat">75%</strong>
             <p className="bento-card-note">Design sense / engineering detail</p>
           </div>
         </article>
 
         <article className="about-bento-card about-projects-card">
-          <p className="bento-label">Selected projects</p>
-          <strong className="bento-stat">05</strong>
-          <p className="bento-card-note">Small products, shipped with care.</p>
+          <p className="bento-label">Award</p>
+          Academic Excellence Award 2024
+          Academic Excellence Award 2023
         </article>
 
         <article className="about-bento-card about-stack-card">
