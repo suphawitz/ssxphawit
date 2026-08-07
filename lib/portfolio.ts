@@ -22,6 +22,14 @@ export const articleLines: ArticleLine[] = [
   },
 ];
 
+export function getScrollProgress(lineTop: number, viewportHeight: number): number {
+  const start = viewportHeight * 0.9;
+  const end = viewportHeight * 0.1;
+  const progress = (start - lineTop) / (start - end);
+
+  return Math.min(1, Math.max(0, Number(progress.toFixed(3))));
+}
+
 export const techStack = [
   "React",
   "Next.js",
@@ -59,20 +67,6 @@ export type TechMarqueeRow = {
 };
 
 export function getTechStackRows(items: string[]): TechMarqueeRow[] {
-  const repeatedItems = [...items, ...items, ...items];
-
-  return [
-    { direction: "left", items: repeatedItems },
-    { direction: "right", items: [...repeatedItems].reverse() },
-  ];
-}
-
-export type ToolIconMarqueeRow = {
-  direction: "left" | "right";
-  items: ToolIcon[];
-};
-
-export function getToolIconRows(items: ToolIcon[]): ToolIconMarqueeRow[] {
   const repeatedItems = [...items, ...items, ...items];
 
   return [

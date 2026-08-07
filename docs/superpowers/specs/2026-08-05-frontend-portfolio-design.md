@@ -39,11 +39,11 @@ The first release succeeds when:
 - Contact links for GitHub, LinkedIn, email, and a resume download placeholder.
 - Subtle interactive motion, hover previews on capable devices, and touch-friendly fallbacks.
 - A mobile burger menu with keyboard-close support and a full-screen navigation panel.
-- A scroll-emphasis article section after selected work, where lines transition from soft gray to near-black as they enter view.
-- A tool-icon section using local assets from `public/tools`, with two continuously moving rows that do not pause on hover.
+- A concise article section after selected work using the owner's editable `articleLines` copy, where each line transitions from soft gray to near-black as it enters view and stops changing when scrolling stops.
 - Scroll-driven section reveals that run once when each section enters the viewport.
 - A two-row technology marquee in opposite directions with a reduced-motion fallback; hover must not pause the movement.
-- A bento-grid about section with profile, focus, portrait, resume, tools, and working-principle cards.
+- A bento-grid about section with a large centered portrait card surrounded by availability, project, stack, collaboration, craft, focus, and working-principle cards.
+- Font Awesome React icons for social, contact, resume, and utility affordances.
 - Metadata, semantic structure, keyboard navigation, visible focus states, alt text, and reduced-motion support.
 
 ### Out of scope for the first release

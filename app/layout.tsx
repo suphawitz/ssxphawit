@@ -1,12 +1,17 @@
 import type { Metadata } from "next";
 
+import { config } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
+
 import { SiteHeader } from "@/components/site-header";
 
 import "./globals.css";
 
+config.autoAddCss = false;
+
 export const metadata: Metadata = {
   title: {
-    default: "ssxphawit | Suphawit",
+    default: "ssxphawit - Frontend Developer",
     template: "Suphawit",
   },
   description:

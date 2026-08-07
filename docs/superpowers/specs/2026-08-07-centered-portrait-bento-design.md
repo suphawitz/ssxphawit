@@ -13,14 +13,13 @@ The section will use warm, soft surfaces, restrained borders, rounded cards, and
 
 ## Desktop composition
 
-Use a four-column CSS grid with four content rows and consistent gaps.
+Use a four-column CSS grid with three compact content rows and consistent gaps.
 
-- The portrait card sits in the center and spans two columns and three rows.
+- The portrait card sits in the center and spans two columns and one row.
 - The upper-left card communicates availability for software-house teams.
 - Two compact cards above the portrait show selected project count and core frontend stack.
 - The upper-right card communicates collaboration and team fit.
-- The lower-left card highlights frontend craft and the design-to-code workflow.
-- The right-side cards communicate Bangkok/remote availability and working principles.
+- The lower row contains frontend craft, visual systems, working principles, and a contact action.
 - The portrait card uses `/profile.jpg`, an accessible alt text, and a small overlay label such as “Frontend developer / Bangkok”.
 
 The content should be short enough to remain scannable inside compact cards. The existing social links, resume action, and tool imagery remain available, but they should be placed only where they support the new hierarchy instead of competing with the portrait.

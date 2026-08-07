@@ -446,99 +446,6 @@ h2 em {
   margin-top: 0.15em;
 }
 
-.tool-section-heading {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(16rem, 0.8fr);
-  align-items: end;
-  gap: clamp(2rem, 8vw, 9rem);
-}
-
-.tool-section-heading h2 {
-  margin: 1.25rem 0 0;
-  font-size: clamp(3.5rem, 8vw, 8rem);
-  line-height: 0.84;
-}
-
-.tool-section-intro {
-  max-width: 22rem;
-  margin-bottom: 0.3rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
-}
-
-.tool-icon-marquee {
-  display: grid;
-  gap: 1rem;
-  overflow: hidden;
-  margin-top: clamp(4rem, 8vw, 7rem);
-}
-
-.tool-icon-row {
-  overflow: hidden;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  padding: 1.25rem 0;
-}
-
-.tool-icon-track {
-  display: flex;
-  width: max-content;
-  align-items: center;
-  gap: clamp(0.75rem, 2vw, 1.25rem);
-  animation: tool-icons-left 38s linear infinite;
-  will-change: transform;
-}
-
-.tool-icon-right .tool-icon-track {
-  animation-name: tool-icons-right;
-}
-
-.tool-icon-card {
-  display: inline-flex;
-  min-width: clamp(8rem, 14vw, 12rem);
-  align-items: center;
-  gap: 0.8rem;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--surface);
-  padding: 0.55rem 1rem 0.55rem 0.6rem;
-}
-
-.tool-icon-card img {
-  width: 2.6rem;
-  height: 2.6rem;
-  object-fit: contain;
-}
-
-.tool-icon-card span {
-  white-space: nowrap;
-  color: var(--foreground);
-  font-size: 0.75rem;
-  letter-spacing: 0.03em;
-}
-
-@keyframes tool-icons-left {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-33.333%);
-  }
-}
-
-@keyframes tool-icons-right {
-  from {
-    transform: translateX(-33.333%);
-  }
-
-  to {
-    transform: translateX(0);
-  }
-}
-
-
 .section-heading {
   display: grid;
   grid-template-columns: 1fr;
@@ -733,13 +640,23 @@ h2 em {
 
 .about-bento {
   display: grid;
-  grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-auto-rows: minmax(8rem, auto);
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1.15fr)
+    minmax(0, 1.15fr)
+    minmax(0, 1fr);
+  grid-template-rows: repeat(4, minmax(8rem, 1fr));
+  grid-template-areas:
+    "availability projects stack collaboration"
+    "availability portrait portrait collaboration"
+    "craft portrait portrait focus"
+    "craft portrait portrait values";
   gap: 1rem;
 }
 
 .about-bento-card {
   position: relative;
+  min-width: 0;
   overflow: hidden;
   border-radius: 1.35rem;
   padding: clamp(1.25rem, 2.5vw, 2rem);
@@ -752,7 +669,6 @@ h2 em {
   z-index: 1;
 }
 
-.bento-card-topline,
 .bento-label {
   position: relative;
   z-index: 1;
@@ -763,64 +679,199 @@ h2 em {
   text-transform: uppercase;
 }
 
-.bento-card-topline {
+.about-availability-card,
+.about-projects-card,
+.about-stack-card,
+.about-collaboration-card,
+.about-craft-card,
+.about-focus-card,
+.about-values-card {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem;
+  flex-direction: column;
 }
 
-.about-profile-card {
-  grid-column: span 6;
-  grid-row: span 2;
-  min-height: 30rem;
+.about-availability-card {
+  grid-area: availability;
+  justify-content: space-between;
+  background: #f2d3bf;
+}
+
+.availability-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: auto 0 1rem;
+  color: var(--foreground);
+  font-size: 0.68rem;
+  line-height: 1.3;
+}
+
+.availability-status-dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #6a9e66;
+  box-shadow: 0 0 0 0.25rem rgba(106, 158, 102, 0.16);
+}
+
+.bento-card-copy {
+  max-width: 22rem;
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.about-projects-card {
+  grid-area: projects;
+  justify-content: space-between;
+  background: var(--surface);
+}
+
+.about-stack-card {
+  grid-area: stack;
+  justify-content: space-between;
+  background: #d9e7df;
+}
+
+.bento-stat {
+  display: block;
+  margin: auto 0 0;
+  color: var(--foreground);
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  letter-spacing: -0.08em;
+  line-height: 0.8;
+}
+
+.bento-card-note {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-size: 0.68rem;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+}
+
+.stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.stack-list span {
+  border: 1px solid rgba(30, 44, 40, 0.22);
+  border-radius: 999px;
+  padding: 0.45rem 0.55rem;
+  color: var(--foreground);
+  font-size: 0.64rem;
+  line-height: 1;
+}
+
+.about-collaboration-card {
+  grid-area: collaboration;
+  justify-content: space-between;
+  background: #ebe7df;
+}
+
+.about-collaboration-card h3,
+.about-focus-card h3 {
+  margin: auto 0 1.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.6rem, 2.6vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.about-collaboration-card h3 em,
+.about-focus-card h3 em {
+  color: var(--accent);
+}
+
+.about-photo-card {
+  grid-area: portrait;
+  min-height: 34rem;
+  padding: 0;
+  background: #dce9e0;
+}
+
+.about-photo-card img {
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+.about-photo-overlay {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+.about-photo-overlay span {
+  border-radius: 999px;
+  background: rgba(251, 250, 246, 0.9);
+  padding: 0.5rem 0.65rem;
+  color: var(--foreground);
+  font-size: 0.6rem;
+  letter-spacing: 0.04em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.about-craft-card {
+  grid-area: craft;
+  justify-content: space-between;
   background: var(--surface-dark);
   color: var(--background);
 }
 
-.about-profile-card .bento-card-topline,
-.about-profile-card .bento-label {
+.about-craft-card .bento-label {
   color: #aeb6af;
 }
 
-.about-profile-main {
-  display: flex;
-  height: calc(100% - 1.2rem);
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 5rem;
+.about-craft-card h2 {
+  margin: auto 0 1rem;
+  font-size: clamp(2.6rem, 4.5vw, 5rem);
+  letter-spacing: -0.08em;
+  line-height: 0.82;
 }
 
-.about-profile-card h2 {
-  margin: 0 0 1.5rem;
-  font-size: clamp(3rem, 5vw, 5.8rem);
-  line-height: 0.86;
-}
-
-.about-profile-card h2 em {
+.about-craft-card h2 em {
   color: #a9d29d;
 }
 
-.about-profile-card p {
-  max-width: 28rem;
-  margin: 0;
+.about-craft-card .bento-card-copy {
   color: #d5ddd6;
-  font-size: 0.9rem;
-  line-height: 1.55;
+}
+
+.about-focus-card {
+  grid-area: focus;
+  justify-content: space-between;
+  background: linear-gradient(120deg, #d9e7df 0%, #a9d29d 100%);
 }
 
 .about-socials {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.6rem;
-  padding-top: 2rem;
+  gap: 0.45rem;
+  margin-top: 1.5rem;
 }
 
 .about-socials a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   border: 1px solid #586860;
   border-radius: 999px;
-  padding: 0.55rem 0.75rem;
+  padding: 0.45rem 0.55rem;
   color: #d5ddd6;
-  font-size: 0.68rem;
+  font-size: 0.6rem;
   transition: background-color 180ms ease, color 180ms ease;
 }
 
@@ -828,28 +879,6 @@ h2 em {
 .about-socials a:focus-visible {
   background: #a9d29d;
   color: var(--surface-dark);
-}
-
-.about-focus-card {
-  grid-column: span 4;
-  grid-row: span 1;
-  min-height: 14rem;
-  background: linear-gradient(120deg, #d9e7df 0%, #a9d29d 100%);
-}
-
-.about-focus-card h3,
-.about-practice-card h3 {
-  margin: 2.5rem 0 0;
-  font-family: var(--display);
-  font-size: clamp(2rem, 3.5vw, 3.8rem);
-  font-weight: 400;
-  letter-spacing: -0.06em;
-  line-height: 0.9;
-}
-
-.about-focus-card h3 em,
-.about-practice-card h3 em {
-  color: var(--accent);
 }
 
 .bento-orbit {
@@ -874,115 +903,31 @@ h2 em {
   transform: translate(-50%, -50%);
 }
 
-.about-photo-card {
-  grid-column: span 2;
-  grid-row: span 1;
-  min-height: 14rem;
-  padding: 0;
-  background: #dce9e0;
-}
-
-.about-photo-card img {
-  object-fit: cover;
-}
-
-.about-photo-card span {
-  position: absolute;
-  right: 0.85rem;
-  bottom: 0.85rem;
-  z-index: 1;
-  border-radius: 999px;
-  background: rgba(251, 250, 246, 0.86);
-  padding: 0.42rem 0.6rem;
-  font-size: 0.6rem;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.about-practice-card {
-  grid-column: span 4;
-  grid-row: span 1;
-  min-height: 14rem;
-  background: #f2d3bf;
-}
-
-.bento-card-note {
-  position: absolute !important;
-  right: 1.5rem;
-  bottom: 1.5rem;
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.68rem;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.about-resume-card {
-  grid-column: span 3;
-  grid-row: span 1;
-  min-height: 14rem;
-  background: #c8b0ee;
-  transition: transform 220ms ease;
-}
-
-.about-resume-card:hover,
-.about-resume-card:focus-visible {
-  transform: translateY(-0.25rem);
-}
-
 .resume-icon {
   display: flex;
-  width: 3rem;
-  height: 3rem;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 auto;
   align-items: center;
   justify-content: center;
   border-radius: 50%;
   background: var(--surface);
   color: var(--foreground);
-  font-size: 1.5rem;
-}
-
-.about-resume-card .resume-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.about-resume-card strong {
-  position: absolute;
-  right: 1.25rem;
-  bottom: 1.1rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-}
-
-.about-tools-card {
-  grid-column: span 3;
-  grid-row: span 1;
-  min-height: 14rem;
-  background: var(--foreground);
-  color: var(--background);
-}
-
-.about-tools-card .bento-label {
-  color: #c9ccc7;
+  font-size: 0.85rem;
 }
 
 .about-tool-stack {
-  position: absolute;
-  right: 1.2rem;
-  bottom: 1rem;
   display: flex;
   align-items: end;
+  margin-left: auto;
 }
 
 .about-tool-stack img {
-  width: 3.8rem;
-  height: 3.8rem;
+  width: 2.6rem;
+  height: 2.6rem;
   margin-left: -0.6rem;
-  border: 4px solid var(--foreground);
-  border-radius: 1rem;
+  border: 3px solid var(--surface);
+  border-radius: 0.75rem;
   background: var(--surface);
   object-fit: contain;
 }
@@ -1004,9 +949,8 @@ h2 em {
 }
 
 .about-values-card {
-  grid-column: span 6;
-  grid-row: span 1;
-  min-height: 8rem;
+  grid-area: values;
+  justify-content: space-between;
   background: #ebe7df;
 }
 
@@ -1024,6 +968,189 @@ h2 em {
   font-family: var(--display);
   font-size: clamp(1rem, 1.8vw, 1.5rem);
   letter-spacing: -0.03em;
+}
+
+.about-values-actions {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.resume-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--foreground);
+  font-size: 0.65rem;
+  line-height: 1.2;
+}
+
+.resume-link:hover,
+.resume-link:focus-visible {
+  color: var(--accent);
+}
+
+/* Compact reference-inspired bento composition */
+.about-bento {
+  grid-template-rows: repeat(3, minmax(8rem, 1fr));
+  grid-template-areas:
+    "availability projects stack collaboration"
+    "availability portrait portrait collaboration"
+    "craft type values contact";
+  gap: 0.75rem;
+}
+
+.about-bento-card {
+  padding: clamp(1rem, 2vw, 1.5rem);
+}
+
+.about-availability-card {
+  grid-area: availability;
+  justify-content: space-between;
+  background: #f2d3bf;
+}
+
+.about-projects-card {
+  grid-area: projects;
+  justify-content: space-between;
+  background: var(--surface);
+}
+
+.about-stack-card {
+  grid-area: stack;
+  justify-content: space-between;
+  background: #d9e7df;
+}
+
+.about-collaboration-card {
+  grid-area: collaboration;
+  justify-content: space-between;
+  background: #ebe7df;
+}
+
+.about-collaboration-card h3 {
+  margin: auto 0 0.8rem;
+  font-size: clamp(1.6rem, 2.4vw, 2.7rem);
+}
+
+.about-collaboration-card .bento-card-copy {
+  font-size: 0.72rem;
+}
+
+.collaboration-avatars {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.collaboration-avatars span {
+  display: grid;
+  width: 1.65rem;
+  height: 1.65rem;
+  margin-left: -0.25rem;
+  place-items: center;
+  border: 2px solid #ebe7df;
+  border-radius: 50%;
+  background: var(--surface-dark);
+  color: var(--background);
+  font-size: 0.46rem;
+  letter-spacing: -0.02em;
+}
+
+.collaboration-avatars span:first-child {
+  margin-left: 0;
+  background: #a9d29d;
+  color: var(--foreground);
+}
+
+.collaboration-avatars span:nth-child(2) {
+  background: #f2d3bf;
+  color: var(--foreground);
+}
+
+.about-photo-card {
+  grid-area: portrait;
+  min-height: 20rem;
+}
+
+.about-craft-card {
+  grid-area: craft;
+  justify-content: space-between;
+}
+
+.about-craft-card h2 {
+  margin: auto 0 0.75rem;
+  font-size: clamp(2.4rem, 3.7vw, 4rem);
+}
+
+.about-tool-stack {
+  margin-top: auto;
+  margin-left: 0;
+  padding-top: 1rem;
+}
+
+.about-tool-stack img {
+  width: 2.35rem;
+  height: 2.35rem;
+}
+
+.about-type-card {
+  grid-area: type;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #f2d3bf;
+}
+
+.about-type-card h3 {
+  margin: auto 0 0.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.4vw, 2.7rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.9;
+}
+
+.about-type-card h3 em {
+  color: var(--accent);
+}
+
+.about-type-card .bento-card-note {
+  margin-top: 0;
+}
+
+.about-values-card {
+  grid-area: values;
+  justify-content: space-between;
+}
+
+.about-values-card .value-pills {
+  margin-top: auto;
+}
+
+.about-contact-card {
+  grid-area: contact;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #d9e7df;
+}
+
+.about-contact-card .resume-link {
+  margin-top: auto;
+  padding-top: 1.25rem;
+  color: var(--foreground);
+}
+
+.about-contact-card .about-socials {
+  margin-top: 1rem;
+}
+
+.about-contact-card .about-socials a {
+  border-color: rgba(30, 44, 40, 0.25);
+  color: var(--foreground);
 }
 
 .capability-list {
@@ -1306,6 +1433,27 @@ h2 em {
   letter-spacing: -0.05em;
 }
 
+@media (max-width: 980px) and (min-width: 801px) {
+  .about-bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+      "portrait portrait"
+      "availability collaboration"
+      "projects stack"
+      "craft type"
+      "values contact";
+  }
+
+  .about-photo-card {
+    min-height: 20rem;
+  }
+
+  .about-bento-card {
+    min-height: 15rem;
+  }
+}
+
 @media (max-width: 800px) {
   .site-header {
     grid-template-columns: 1fr auto;
@@ -1356,11 +1504,6 @@ h2 em {
     max-width: 20rem;
   }
 
-  .tool-section-heading {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-
   .hero-portrait {
     width: min(72vw, 23rem);
     min-height: 24rem;
@@ -1382,27 +1525,23 @@ h2 em {
   .about-bento {
     grid-template-columns: 1fr;
     grid-auto-rows: auto;
+    grid-template-areas: none;
   }
 
   .about-bento-card {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .about-profile-card {
-    min-height: 32rem;
-  }
-
-  .about-focus-card,
-  .about-photo-card,
-  .about-practice-card,
-  .about-resume-card,
-  .about-tools-card {
+    grid-area: auto;
     min-height: 15rem;
   }
 
   .about-photo-card {
-    aspect-ratio: 1.2;
+    order: -1;
+    min-height: 20rem;
+    aspect-ratio: 0.9;
+  }
+
+  .about-photo-overlay {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .project-grid {
@@ -1459,11 +1598,6 @@ h2 em {
   }
 
   .tech-marquee-track {
-    animation: none;
-    transform: none;
-  }
-
-  .tool-icon-track {
     animation: none;
     transform: none;
   }
