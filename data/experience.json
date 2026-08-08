@@ -1,26 +1,18 @@
 [
   {
-    "id": "frontend-developer",
-    "period": "2025 — Present",
-    "title": "Frontend Developer",
-    "context": "Selected frontend projects",
-    "description": "I build responsive interfaces with clear systems, thoughtful interactions, and clean handoffs.",
-    "contributions": ["React", "Next.js", "Responsive UI", "Teamwork"]
-  },
-  {
-    "id": "independent-builder",
-    "period": "2024",
-    "title": "Independent Builder",
-    "context": "Small web products",
-    "description": "I turn early ideas into focused web experiences by moving from structure to shipped detail.",
-    "contributions": ["UI implementation", "Design systems", "Iteration"]
-  },
-  {
-    "id": "digital-business-student",
+    "id": "study",
     "period": "2023 — Present",
-    "title": "Digital Business Student",
+    "title": "Business Administration, major in Digital Business Innovation",
     "context": "Maejo University",
-    "description": "I connect business thinking, product context, and frontend craft while learning through real projects.",
-    "contributions": ["Product thinking", "Collaboration", "Continuous learning"]
+    "description": "Studying business innovation and digital technology. I will learn strategic planning, digital marketing, data analysis, and business model building to meet the demands of the modern world.",
+    "contributions": ["Management", "Marketing", "Data Analysis", "Business Model"]
+  },
+  {
+    "id": "cyberkit-co",
+    "period": "Oct 2024 - Fab 2025",
+    "title": "Frontend Dev & Manual Tester",
+    "context": "Cyberkit Digital Co, Ltd.",
+    "description": "A dual role combining front-end UI development and manual QA testing, focused on finding bugs and collaborating remotely with developers to ensure software quality for E-commerce and ERP systems.",
+    "contributions": ["HTML", "CSS", "PHP", "Testing", "Bug Reporting"]
   }
 ]

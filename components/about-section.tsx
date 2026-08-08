@@ -21,8 +21,8 @@ export function AboutSection() {
   const frontendStack = [
     { name: "Next.js", src: "/tools/nextjs.svg", alt: "Next.js logo" },
     { name: "JavaScript", src: "/tools/js.png", alt: "JavaScript logo" },
-    { name: "CSS3", src: "/tools/css-3.png", alt: "CSS3 logo" },
-    { name: "React", src: "/tools/react.png", alt: "React logo" },
+    { name: "Vercel", src: "/tools/vercel.svg", alt: "Vercel logo" },
+    { name: "Supabase", src: "/tools/supabase.png", alt: "Supabase logo" },
   ];
 
   return (
@@ -205,7 +205,7 @@ export function AboutSection() {
             <i />
             <i />
           </div>
-          <a className="bento-inline-link" href="#about-title">
+          <a className="bento-inline-link">
             Explore visual system <span aria-hidden="true">↗</span>
           </a>
         </article>
@@ -229,7 +229,7 @@ export function AboutSection() {
               <p><strong>Empathy first</strong><small>I design with real people in mind.</small></p>
             </div>
           </div>
-          <a className="bento-inline-link" href="#contact">
+          <a className="bento-inline-link">
             More about my process <span aria-hidden="true">→</span>
           </a>
         </article>

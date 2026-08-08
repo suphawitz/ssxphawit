@@ -264,7 +264,7 @@ a:focus-visible {
   border-bottom: 1px solid #3b4d45;
   padding: 1.1rem 0;
   font-family: var(--display);
-  font-size: clamp(3.5rem, 16vw, 6rem);
+  font-size: clamp(3rem, 10vw, 7rem);
   letter-spacing: -0.07em;
   line-height: 0.85;
 }
@@ -434,12 +434,11 @@ h2 em {
   align-items: center;
   gap: 0.55rem;
   margin-top: 1.5rem;
-  border: 1px solid var(--foreground);
   border-radius: 999px;
-  padding: 0.7rem 0.9rem;
-  color: var(--foreground);
-  font-size: 0.72rem;
-  letter-spacing: 0.03em;
+  padding: 1.2rem 1.6rem;
+  color: #fff;
+  font-size: 1rem;
+  background-color: var(--accent);
   transition: background-color 180ms ease, color 180ms ease;
 }
 
@@ -794,7 +793,7 @@ h2 em {
 }
 
 .experience-detail-panel h3 {
-  max-width: 8ch;
+  /* max-width: 8ch; */
   margin: 0.8rem 0 1.25rem;
   font-family: var(--display);
   font-size: clamp(2.8rem, 5vw, 5.5rem);
@@ -1032,18 +1031,10 @@ h2 em {
 .education-degree h3 {
   max-width: 14rem;
   font-family: var(--display);
-  font-size: clamp(1.55rem, 2.3vw, 2.4rem);
+  font-size: clamp(1.55rem, 2.3vw, 2.2rem);
   font-weight: 400;
   letter-spacing: -0.06em;
   line-height: 0.92;
-}
-
-.education-degree p {
-  max-width: 13rem;
-  margin-top: 0.75rem;
-  color: var(--muted);
-  font-size: 0.875rem;
-  line-height: 1.4;
 }
 
 .education-footer {
@@ -1519,21 +1510,10 @@ h2 em {
   text-transform: uppercase;
 }
 
-.education-degree h3 {
-  margin-top: 0.9rem;
-  max-width: 15rem;
-  font-size: clamp(1.8rem, 2.7vw, 2.8rem);
-  line-height: 0.92;
-}
-
 .education-degree p {
   max-width: 13rem;
   margin-top: 1rem;
   font-size: 0.78rem;
-}
-
-.education-footer {
-  margin-top: 2rem;
 }
 
 .education-footer .availability-status {
