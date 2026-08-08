@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
   faEnvelope,
+  faSquareUpRight
 } from "@fortawesome/free-solid-svg-icons";
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { toolIcons } from "@/lib/portfolio";
 
@@ -35,14 +36,14 @@ export function AboutSection() {
           <div className="education-header">
             <Image
               className="education-logo"
-              src="/logoMJU.png"
+              src="/mju_logo.webp"
               alt="Maejo University logo"
-              width={56}
-              height={56}
+              width={96}
+              height={96}
             />
             <div>
-              <p className="education-school">Maejo University</p>
-              <p className="education-period">2023 — now</p>
+              <p className="education-school text-center">Maejo University</p>
+              <p className="education-period text-center">2023 — now</p>
             </div>
           </div>
           <div className="education-degree">
@@ -70,11 +71,26 @@ export function AboutSection() {
           <ul className="award-list">
             <li>
               <span>2024</span>
-              <strong>Academic Excellence Award</strong>
+              <strong>Academic Excellence Award
+                <p className="text-sm text-gray-400">
+                  Maejo University
+                </p>
+              </strong>
             </li>
             <li>
               <span>2023</span>
-              <strong>Academic Excellence Award</strong>
+              <strong>Academic Excellence Award
+                <p className="text-sm text-gray-400">
+                  Maejo University
+                </p></strong>
+            </li>
+            <li>
+              <span>2022</span>
+              <strong>National Competition (2nd Runner-up)
+                <p className="text-sm text-gray-400">
+                  National Student Arts & Crafts Competition #70
+                </p>
+              </strong>
             </li>
           </ul>
         </article>
@@ -105,7 +121,7 @@ export function AboutSection() {
 
         <article className="about-bento-card about-photo-card">
           <Image
-            src="/profile.jpg"
+            src="/profile-02.jpg"
             alt="Suphawit by a lake"
             fill
             sizes="(max-width: 800px) 100vw, (max-width: 980px) 100vw, 50vw"
@@ -149,8 +165,15 @@ export function AboutSection() {
         </article>
 
         <article className="about-bento-card about-contact-card">
-          <p className="bento-label">Let&apos;s make it useful</p>
-          <a className="resume-link" href="mailto:hello@phawit.dev">
+          <p className="bento-label">Let's make it useful</p>
+
+          <div className="flex items-center justify-center mt-5">
+            <a href="/resume.pdf" target="_blank" rel="noreferrer">
+              <span>Resume</span>
+              <FontAwesomeIcon icon={faSquareUpRight} aria-hidden="true" />
+            </a>
+          </div>
+          <a className="resume-link" href="mailto:suphawit.aum.si@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
             <span>Start a conversation</span>
             <FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" />
@@ -160,9 +183,9 @@ export function AboutSection() {
               <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
               <span>GitHub</span>
             </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-              <FontAwesomeIcon icon={faLinkedin} aria-hidden="true" />
-              <span>LinkedIn</span>
+            <a href="https://www.instagram.com/su_phawit.12" target="_blank" rel="noreferrer">
+              <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
+              <span>Instagram</span>
             </a>
           </div>
         </article>

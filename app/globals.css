@@ -756,17 +756,18 @@ h2 em {
 
 .education-header {
   display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
-  gap: 0.8rem;
+  gap: 0.4rem;
   margin-top: 1.5rem;
 }
 
 .education-logo {
-  width: clamp(3rem, 5vw, 4rem);
-  height: clamp(3rem, 5vw, 4rem);
+  width: clamp(5rem, 8vw, 7rem);
+  height: clamp(5rem, 8vw, 7rem);
   flex: 0 0 auto;
   border-radius: 0.8rem;
-  background: var(--surface);
   object-fit: contain;
   padding: 0.25rem;
 }
@@ -781,12 +782,12 @@ h2 em {
 }
 
 .education-school {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 1rem;
+  font-weight: 800;
+  text-transform: uppercase;
 }
 
 .education-period {
-  margin-top: 0.25rem;
   color: var(--muted);
   font-size: 0.65rem;
   letter-spacing: 0.04em;
@@ -810,7 +811,7 @@ h2 em {
   max-width: 13rem;
   margin-top: 0.75rem;
   color: var(--muted);
-  font-size: 0.68rem;
+  font-size: 0.875rem;
   line-height: 1.4;
 }
 
@@ -1013,7 +1014,7 @@ h2 em {
 
 .about-photo-card img {
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center 80%;
 }
 
 .about-photo-overlay {
@@ -1083,9 +1084,9 @@ h2 em {
   gap: 0.35rem;
   border: 1px solid #586860;
   border-radius: 999px;
-  padding: 0.45rem 0.55rem;
+  padding: 0.65rem 0.75rem;
   color: #d5ddd6;
-  font-size: 0.6rem;
+  font-size: 0.7rem;
   transition: background-color 180ms ease, color 180ms ease;
 }
 
@@ -1198,7 +1199,7 @@ h2 em {
   align-items: center;
   gap: 0.4rem;
   color: var(--foreground);
-  font-size: 0.65rem;
+  font-size: 0.75rem;
   line-height: 1.2;
 }
 

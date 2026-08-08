@@ -15,7 +15,7 @@
 .track {
   display: flex;
   width: max-content;
-  animation: move-right 26s linear infinite;
+  animation: move-right 52s linear infinite;
   will-change: transform;
 }
 
@@ -57,11 +57,11 @@
 
 @keyframes move-right {
   from {
-    transform: translateX(-50%);
+    transform: translateX(0);
   }
 
   to {
-    transform: translateX(0);
+    transform: translateX(-50%);
   }
 }
 

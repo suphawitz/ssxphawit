@@ -57,6 +57,7 @@ export const toolIcons: ToolIcon[] = [
   { name: "Next.js", src: "/tools/nextjs.svg", alt: "Next.js logo" },
   { name: "GitHub", src: "/tools/github.png", alt: "GitHub logo" },
   { name: "Figma", src: "/tools/figma.png", alt: "Figma logo" },
+  { name: "VS Code", src: "/tools/vs_code.svg", alt: "VS Code logo" },
   { name: "GPT", src: "/tools/gpt.png", alt: "GPT logo" },
   { name: "Word", src: "/tools/word.svg", alt: "Word logo" },
   { name: "Excel", src: "/tools/excel.svg", alt: "Excel logo" },
