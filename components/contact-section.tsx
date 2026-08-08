@@ -1,3 +1,7 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
+import { faPhone, faFile } from "@fortawesome/free-solid-svg-icons";
+
 export function ContactSection() {
   return (
     <section className="contact-section" id="contact" aria-labelledby="contact-title">
@@ -14,18 +18,25 @@ export function ContactSection() {
           I&apos;m open to frontend roles, thoughtful collaborations, and the next
           opportunity to make something useful.
         </p>
-        <a className="contact-email" href="mailto:hello@phawit.dev">
-          hello@phawit.dev <span aria-hidden="true">↗</span>
+        <a className="contact-email" href="mailto:suphawit.aum.si@gmail.com">
+          suphawit.aum.si@gmail.com 
         </a>
         <div className="social-links" aria-label="Social links">
-          <a href="https://github.com/suphawitz" target="_blank" rel="noreferrer">
-            GitHub ↗
+          <a href="https://github.com/suphawitz" className="flex items-center" target="_blank" rel="noreferrer">
+            <FontAwesomeIcon icon={faGithub} className="pr-1 text-lg" aria-hidden="true" />
+            <span>GitHub</span>
           </a>
-          <a href="https://www.linkedin.com" target="_blank" rel="noreferrer">
-            LinkedIn ↗
+          <a href="https://www.instagram.com/su_phawit.12" className="flex items-center" target="_blank" rel="noreferrer">
+            <FontAwesomeIcon icon={faInstagram} className="pr-1 text-lg" aria-hidden="true" />
+            <span>Instagram</span>
           </a>
-          <a target="_blank" rel="noreferrer" href="/resume.pdf">
-            Resume ↗
+          <a target="_blank" rel="noreferrer" href="/resume.pdf" className="flex items-center">
+            <FontAwesomeIcon icon={faFile} className="pr-1 text-lg" aria-hidden="true" />
+            <span>Resume</span>
+          </a>
+          <a target="_blank" rel="noreferrer" href="tel:+66649582354" className="flex items-center">
+            <FontAwesomeIcon icon={faPhone} className="pr-1 text-lg" aria-hidden="true" />
+            <span>+66 64 958 2354</span>
           </a>
         </div>
       </div>
