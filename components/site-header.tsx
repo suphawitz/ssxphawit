@@ -25,6 +25,7 @@ export function SiteHeader() {
       <nav className="site-nav" aria-label="Main navigation">
         <Link href="/#about">About</Link>
         <Link href="/#work">Work</Link>
+        <Link href="/#experience">Experience</Link>
         <Link href="/#contact">Contact</Link>
       </nav>
 

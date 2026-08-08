@@ -57,6 +57,9 @@ export function MobileMenu() {
           <Link href="/#contact" onClick={() => setIsOpen(false)}>
             Contact <span aria-hidden="true">↗</span>
           </Link>
+          <Link href="/#experience" onClick={() => setIsOpen(false)}>
+            Experience <span aria-hidden="true">↗</span>
+          </Link>
         </nav>
         <button
           className="mobile-menu-dismiss"
