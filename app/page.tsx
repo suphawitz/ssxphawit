@@ -1,15 +1,18 @@
 import { AboutSection } from "@/components/about-section";
 import { ArticleSection } from "@/components/article-section";
 import { ContactSection } from "@/components/contact-section";
+import { ExperienceSection } from "@/components/experience-section";
 import { HeroSection } from "@/components/hero-section";
 import { ProjectIndex } from "@/components/project-index";
 import { ScrollReveal } from "@/components/scroll-reveal";
 import { TechMarquee } from "@/components/tech-marquee";
 import { WorkTogetherMarquee } from "@/components/work-together-marquee";
 import { getFeaturedProjects } from "@/lib/projects";
+import { getExperiences } from "@/lib/experience";
 
 export default function Home() {
   const featuredProjects = getFeaturedProjects();
+  const experiences = getExperiences();
 
   return (
     <div className="site-shell">
@@ -29,6 +32,9 @@ export default function Home() {
         </ScrollReveal>
         <ScrollReveal>
           <ProjectIndex projects={featuredProjects} />
+        </ScrollReveal>
+        <ScrollReveal>
+          <ExperienceSection experiences={experiences} />
         </ScrollReveal>
         <ScrollReveal>
           <WorkTogetherMarquee />

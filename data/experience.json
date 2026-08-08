@@ -1,0 +1,26 @@
+[
+  {
+    "id": "frontend-developer",
+    "period": "2025 — Present",
+    "title": "Frontend Developer",
+    "context": "Selected frontend projects",
+    "description": "I build responsive interfaces with clear systems, thoughtful interactions, and clean handoffs.",
+    "contributions": ["React", "Next.js", "Responsive UI", "Teamwork"]
+  },
+  {
+    "id": "independent-builder",
+    "period": "2024",
+    "title": "Independent Builder",
+    "context": "Small web products",
+    "description": "I turn early ideas into focused web experiences by moving from structure to shipped detail.",
+    "contributions": ["UI implementation", "Design systems", "Iteration"]
+  },
+  {
+    "id": "digital-business-student",
+    "period": "2023 — Present",
+    "title": "Digital Business Student",
+    "context": "Maejo University",
+    "description": "I connect business thinking, product context, and frontend craft while learning through real projects.",
+    "contributions": ["Product thinking", "Collaboration", "Continuous learning"]
+  }
+]
