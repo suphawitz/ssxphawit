@@ -8,7 +8,7 @@ export function TechMarquee() {
   const rows = getTechStackRows(toolIcons);
 
   return (
-    <section className="tech-marquee-section" aria-labelledby="tech-stack-title">
+    <section className="tech-marquee-section" id="tech-stack" aria-labelledby="tech-stack-title">
       <div className="tech-marquee-heading">
         <p className="eyebrow" id="tech-stack-title">
           Tools, thinking, and the stack in between

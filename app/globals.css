@@ -780,6 +780,7 @@ h2 em {
 .education-gpa strong {
   margin: 0;
 }
+.education-degree em { color: var(--accent); font-style: italic; }
 
 .education-school {
   font-size: 1rem;
@@ -801,7 +802,7 @@ h2 em {
 .education-degree h3 {
   max-width: 14rem;
   font-family: var(--display);
-  font-size: clamp(1.55rem, 2.5vw, 2.4rem);
+  font-size: clamp(1.55rem, 2.3vw, 2.4rem);
   font-weight: 400;
   letter-spacing: -0.06em;
   line-height: 0.92;
@@ -1208,9 +1209,14 @@ h2 em {
   color: var(--accent);
 }
 
-/* Compact reference-inspired bento composition */
+/* Reference-inspired bento composition */
 .about-bento {
-  grid-template-rows: repeat(3, minmax(8rem, 1fr));
+  grid-template-columns:
+    minmax(0, 0.96fr)
+    minmax(0, 1.08fr)
+    minmax(0, 1.08fr)
+    minmax(0, 0.96fr);
+  grid-template-rows: minmax(19rem, auto) minmax(18rem, auto) minmax(17rem, auto);
   grid-template-areas:
     "availability projects stack collaboration"
     "availability portrait portrait collaboration"
@@ -1219,69 +1225,259 @@ h2 em {
 }
 
 .about-bento-card {
-  padding: clamp(1rem, 2vw, 1.5rem);
+  border: 1px solid rgba(30, 44, 40, 0.07);
+  border-radius: 1.45rem;
+  box-shadow: 0 0.75rem 2.25rem rgba(49, 53, 48, 0.05);
+  padding: clamp(1.25rem, 2.2vw, 2rem);
+}
+
+.bento-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bento-label svg {
+  width: 0.85rem;
+  color: #a9a296;
 }
 
 .about-availability-card {
   grid-area: availability;
   justify-content: space-between;
-  background: #f2d3bf;
+  background: #fbf4ea;
 }
 
-.about-projects-card {
+.education-header {
+  margin-top: 2rem;
+}
+
+.education-logo {
+  width: clamp(5.75rem, 8vw, 7rem);
+  height: clamp(5.75rem, 8vw, 7rem);
+  padding: 0;
+}
+
+.education-school {
+  font-family: var(--display);
+  font-size: clamp(1.25rem, 1.7vw, 1.6rem);
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  text-transform: none;
+}
+
+.education-period {
+  margin-top: 0.45rem;
+  font-size: 0.68rem;
+}
+
+.education-degree {
+  border-top: 1px solid rgba(30, 44, 40, 0.1);
+  margin-top: auto;
+  padding-top: 1.75rem;
+}
+
+.education-degree-label {
+  display: inline-flex;
+  border: 1px solid rgba(30, 44, 40, 0.12);
+  border-radius: 999px;
+  padding: 0.35rem 0.5rem;
+  color: var(--muted);
+  font-size: 0.58rem;
+  letter-spacing: 0.05em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.education-degree h3 {
+  margin-top: 0.9rem;
+  max-width: 15rem;
+  font-size: clamp(1.8rem, 2.7vw, 2.8rem);
+  line-height: 0.92;
+}
+
+.education-degree p {
+  max-width: 13rem;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+}
+
+.education-footer {
+  margin-top: 2rem;
+}
+
+.education-footer .availability-status {
+  border: 1px solid rgba(30, 44, 40, 0.1);
+  border-radius: 999px;
+  padding: 0.45rem 0.6rem;
+  font-size: 0.58rem;
+}
+
+.education-gpa strong {
+  font-size: clamp(2rem, 3.4vw, 3rem);
+}
+
+.about-awards-card {
   grid-area: projects;
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
   background: var(--surface);
+}
+
+.award-heading {
+  margin-top: 1.2rem;
+}
+
+.award-heading p {
+  max-width: 17rem;
+  font-size: 0.72rem;
+}
+
+.award-list {
+  gap: 0;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.award-list li {
+  grid-template-columns: 2.4rem 1fr;
+  gap: 0.8rem;
+  padding: 0.75rem 0;
+}
+
+.award-list li > span {
+  color: #cf8159;
+  font-size: 0.7rem;
+}
+
+.award-list li > div {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.award-list strong {
+  font-size: clamp(0.95rem, 1.35vw, 1.2rem);
+  line-height: 1;
+}
+
+.award-list small {
+  color: var(--muted);
+  font-size: 0.62rem;
+  line-height: 1.25;
+}
+
+.bento-inline-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+  border-top: 1px solid var(--line);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  color: var(--muted);
+  font-size: 0.68rem;
+  transition: color 180ms ease;
+}
+
+.bento-inline-link:hover,
+.bento-inline-link:focus-visible {
+  color: var(--accent);
 }
 
 .about-stack-card {
   grid-area: stack;
   justify-content: space-between;
-  background: #d9e7df;
+  background: #f0f6f2;
+}
+
+.about-stack-card .bento-stat {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  font-size: clamp(3rem, 5.2vw, 5.4rem);
+}
+
+.about-stack-card .bento-card-note {
+  margin-top: 0.8rem;
+}
+
+.stack-icon-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.45rem;
+  margin-top: 1.4rem;
+}
+
+.stack-icon-item {
+  display: grid;
+  min-width: 0;
+  justify-items: center;
+  gap: 0.35rem;
+}
+
+.stack-icon-item img {
+  width: 2.45rem;
+  height: 2.45rem;
+  border: 1px solid rgba(30, 44, 40, 0.08);
+  border-radius: 0.7rem;
+  background: var(--surface);
+  object-fit: contain;
+  padding: 0.35rem;
+}
+
+.stack-icon-item small {
+  overflow: hidden;
+  max-width: 100%;
+  color: var(--muted);
+  font-size: 0.52rem;
+  line-height: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .about-collaboration-card {
   grid-area: collaboration;
   justify-content: space-between;
-  background: #ebe7df;
+  background: #fbfaf6;
 }
 
 .about-collaboration-card h3 {
-  margin: auto 0 0.8rem;
-  font-size: clamp(1.6rem, 2.4vw, 2.7rem);
+  margin: auto 0 1.25rem;
+  font-size: clamp(1.8rem, 2.8vw, 3rem);
 }
 
 .about-collaboration-card .bento-card-copy {
-  font-size: 0.72rem;
+  font-size: 0.76rem;
 }
 
 .collaboration-avatars {
   display: flex;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .collaboration-avatars span {
   display: grid;
-  width: 1.65rem;
-  height: 1.65rem;
-  margin-left: -0.25rem;
+  width: 2.15rem;
+  height: 2.15rem;
+  margin-left: -0.3rem;
   place-items: center;
-  border: 2px solid #ebe7df;
+  border: 2px solid #fbfaf6;
   border-radius: 50%;
   background: var(--surface-dark);
   color: var(--background);
-  font-size: 0.46rem;
+  font-size: 0.52rem;
   letter-spacing: -0.02em;
 }
 
 .collaboration-avatars span:first-child {
   margin-left: 0;
-  background: #a9d29d;
+  background: #c9e3c5;
   color: var(--foreground);
 }
 
 .collaboration-avatars span:nth-child(2) {
-  background: #f2d3bf;
+  background: #f1ddca;
   color: var(--foreground);
 }
 
@@ -1312,11 +1508,13 @@ h2 em {
 }
 
 .about-type-card {
+  position: relative;
   grid-area: type;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #f2d3bf;
+  padding-right: 7rem;
+  background: #f8f4ec;
 }
 
 .about-type-card h3 {
@@ -1336,13 +1534,93 @@ h2 em {
   margin-top: 0;
 }
 
+.type-specimen {
+  position: absolute;
+  right: 1rem;
+  bottom: 1.25rem;
+  display: grid;
+  width: 5.4rem;
+  gap: 0.35rem;
+  padding: 0.7rem;
+  border: 1px solid rgba(30, 44, 40, 0.06);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.type-specimen span {
+  display: block;
+  padding: 0.25rem;
+  border-radius: 0.6rem;
+  background: rgba(30, 44, 40, 0.06);
+  color: var(--muted);
+  font-family: var(--display);
+  font-size: 2.3rem;
+  line-height: 1;
+  text-align: center;
+}
+
+.type-specimen i {
+  display: block;
+  height: 0.45rem;
+  border-radius: 999px;
+  background: rgba(30, 44, 40, 0.06);
+}
+
+.type-specimen i:nth-of-type(2) { width: 78%; }
+.type-specimen i:nth-of-type(3) { width: 56%; }
+.type-specimen i:nth-of-type(4) { width: 34%; }
+
 .about-values-card {
   grid-area: values;
   justify-content: space-between;
+  background: var(--surface);
 }
 
-.about-values-card .value-pills {
+.how-work-list {
+  display: grid;
+  gap: 0.55rem;
   margin-top: auto;
+  padding-top: 1.25rem;
+}
+
+.how-work-item {
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px solid rgba(30, 44, 40, 0.08);
+  border-radius: 1rem;
+  padding: 0.55rem;
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.how-work-item > span {
+  display: grid;
+  width: 2.1rem;
+  height: 2.1rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #f2f0ea;
+  color: var(--foreground);
+  font-size: 1.2rem;
+}
+
+.how-work-item p {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+}
+
+.how-work-item strong {
+  font-family: var(--display);
+  font-size: 0.88rem;
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.how-work-item small {
+  color: var(--muted);
+  font-size: 0.58rem;
 }
 
 .about-contact-card {
@@ -1350,12 +1628,44 @@ h2 em {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #d9e7df;
+  background: #e8f3ee;
+}
+
+.about-contact-card h3 {
+  margin: .8rem 0 .4rem 0;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 2.2vw, 2.4rem);
+  font-weight: 400;
+  letter-spacing: -0.06em;
+  line-height: 0.95;
+}
+
+.about-contact-card .bento-card-note {
+  margin-top: 0;
+}
+
+.contact-resume-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border-radius: 999px;
+  margin-top: 1.3rem;
+  padding: 0.75rem 1rem;
+  background: var(--surface-dark);
+  color: var(--background);
+  font-size: 0.7rem;
+  transition: transform 180ms ease, background-color 180ms ease;
+}
+
+.contact-resume-button:hover,
+.contact-resume-button:focus-visible {
+  background: var(--accent);
+  transform: translateY(-2px);
 }
 
 .about-contact-card .resume-link {
-  margin-top: auto;
-  padding-top: 1.25rem;
+  margin-top: 1.2rem;
   color: var(--foreground);
 }
 
@@ -1364,7 +1674,7 @@ h2 em {
 }
 
 .about-contact-card .about-socials a {
-  border-color: rgba(30, 44, 40, 0.25);
+  border-color: rgba(30, 44, 40, 0.16);
   color: var(--foreground);
 }
 

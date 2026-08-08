@@ -3,14 +3,28 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowUpRightFromSquare,
+  faDesktop,
   faEnvelope,
-  faSquareUpRight
+  faGraduationCap,
+  faLayerGroup,
+  faPeopleGroup,
+  faSquareUpRight,
+  faStar,
+  faTableCellsLarge,
+  faUserGroup,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 import { toolIcons } from "@/lib/portfolio";
 
 export function AboutSection() {
+  const frontendStack = [
+    { name: "Next.js", src: "/tools/nextjs.svg", alt: "Next.js logo" },
+    { name: "JavaScript", src: "/tools/js.png", alt: "JavaScript logo" },
+    { name: "CSS3", src: "/tools/css-3.png", alt: "CSS3 logo" },
+    { name: "React", src: "/tools/react.png", alt: "React logo" },
+  ];
+
   return (
     <section
       className="about-section about-bento-section"
@@ -32,22 +46,26 @@ export function AboutSection() {
 
       <div className="about-bento">
         <article className="about-bento-card about-availability-card" id="education">
-          <p className="bento-label">Education</p>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faGraduationCap} aria-hidden="true" />
+            Education
+          </p>
           <div className="education-header">
             <Image
               className="education-logo"
               src="/mju_logo.webp"
               alt="Maejo University logo"
-              width={96}
-              height={96}
+              width={112}
+              height={112}
             />
             <div>
-              <p className="education-school text-center">Maejo University</p>
-              <p className="education-period text-center">2023 — now</p>
+              <p className="education-school">Maejo University</p>
+              <p className="education-period text-center">2023 — Present</p>
             </div>
           </div>
           <div className="education-degree">
-            <h3>Bachelor of Business Administration</h3>
+            <span className="education-degree-label">Degree</span>
+            <h3>Bachelor of <em>Business Administration</em></h3>
             <p>Major in Digital Business Innovation (DBI)</p>
           </div>
           <div className="education-footer">
@@ -63,46 +81,66 @@ export function AboutSection() {
         </article>
 
         <article className="about-bento-card about-awards-card" id="award">
-          <p className="bento-label">Award</p>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faStar} aria-hidden="true" />
+            Awards
+          </p>
           <div className="award-heading">
-            <span className="award-symbol" aria-hidden="true">✦</span>
-            <p>Recognised for consistent academic performance.</p>
+            <p>Recognised for consistent academic performance and creative initiative.</p>
           </div>
           <ul className="award-list">
             <li>
               <span>2024</span>
-              <strong>Academic Excellence Award
-                <p className="text-sm text-gray-400">
-                  Maejo University
-                </p>
-              </strong>
+              <div>
+                <strong>Academic Excellence Award</strong>
+                <small>Maejo University</small>
+              </div>
             </li>
             <li>
               <span>2023</span>
-              <strong>Academic Excellence Award
-                <p className="text-sm text-gray-400">
-                  Maejo University
-                </p></strong>
+              <div>
+                <strong>Academic Excellence Award</strong>
+                <small>Maejo University</small>
+              </div>
             </li>
             <li>
               <span>2022</span>
-              <strong>National Competition (2nd Runner-up)
-                <p className="text-sm text-gray-400">
-                  National Student Arts & Crafts Competition #70
-                </p>
-              </strong>
+              <div>
+                <strong>National Competition (2nd Runner-up)</strong>
+                <small>National Student Arts &amp; Crafts Competition #70</small>
+              </div>
             </li>
           </ul>
+          {/* <a className="bento-inline-link" href="#award">
+            View all achievements <span aria-hidden="true">↗</span>
+          </a> */}
         </article>
 
         <article className="about-bento-card about-stack-card">
-          <p className="bento-label">Core frontend stack</p>
-          <strong className="bento-stat">React</strong>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faLayerGroup} aria-hidden="true" />
+            Core frontend stack
+          </p>
+          <strong className="bento-stat">Vide code</strong>
           <p className="bento-card-note">Next.js / TypeScript / CSS</p>
+          <div className="stack-icon-list" aria-label="Core frontend technologies">
+            {frontendStack.map((tool) => (
+              <span className="stack-icon-item" key={tool.name}>
+                <Image src={tool.src} alt={tool.alt} width={32} height={32} />
+                <small>{tool.name}</small>
+              </span>
+            ))}
+          </div>
+          {/* <a className="bento-inline-link" href="#tech-stack">
+            View tech stack <span aria-hidden="true">↗</span>
+          </a> */}
         </article>
 
         <article className="about-bento-card about-collaboration-card">
-          <p className="bento-label">Team of passionate builders</p>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faPeopleGroup} aria-hidden="true" />
+            Team &amp; philosophy
+          </p>
           <h3>
             Build with
             <br />
@@ -128,12 +166,15 @@ export function AboutSection() {
           />
           <div className="about-photo-overlay">
             <span>Frontend developer</span>
-            <span>Bangkok / Thailand ↗</span>
+            <span>Thailand ↗</span>
           </div>
         </article>
 
         <article className="about-bento-card about-craft-card">
-          <p className="bento-label">Frontend craft</p>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faDesktop} aria-hidden="true" />
+            Frontend craft
+          </p>
           <h2 id="about-title">
             Design
             <br />
@@ -147,32 +188,63 @@ export function AboutSection() {
         </article>
 
         <article className="about-bento-card about-type-card">
-          <p className="bento-label">Visual systems</p>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faTableCellsLarge} aria-hidden="true" />
+            Visual systems
+          </p>
           <h3>
             Type, spacing,
             <br />
             <em>motion.</em>
           </h3>
           <p className="bento-card-note">Small decisions make interfaces feel effortless.</p>
+          <div className="type-specimen" aria-hidden="true">
+            <span>Aa</span>
+            <i />
+            <i />
+            <i />
+            <i />
+          </div>
+          <a className="bento-inline-link" href="#about-title">
+            Explore visual system <span aria-hidden="true">↗</span>
+          </a>
         </article>
 
         <article className="about-bento-card about-values-card">
-          <p className="bento-label">How I work</p>
-          <div className="value-pills">
-            <span>Attention to detail</span>
-            <span>Clear systems</span>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faUserGroup} aria-hidden="true" />
+            How I work
+          </p>
+          <div className="how-work-list">
+            <div className="how-work-item">
+              <span aria-hidden="true">⌕</span>
+              <p><strong>Attention to detail</strong><small>I care about the little things.</small></p>
+            </div>
+            <div className="how-work-item">
+              <span aria-hidden="true">✓</span>
+              <p><strong>Clear systems</strong><small>I document, automate, and reuse.</small></p>
+            </div>
+            <div className="how-work-item">
+              <span aria-hidden="true">◎</span>
+              <p><strong>Empathy first</strong><small>I design with real people in mind.</small></p>
+            </div>
           </div>
+          <a className="bento-inline-link" href="#contact">
+            More about my process <span aria-hidden="true">→</span>
+          </a>
         </article>
 
         <article className="about-bento-card about-contact-card">
-          <p className="bento-label">Let's make it useful</p>
-
-          <div className="flex items-center justify-center mt-5">
-            <a href="/resume.pdf" target="_blank" rel="noreferrer">
-              <span>Resume</span>
-              <FontAwesomeIcon icon={faSquareUpRight} aria-hidden="true" />
-            </a>
-          </div>
+          <p className="bento-label">
+            <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
+            Let&apos;s connect
+          </p>
+          <h3>Let&apos;s build<br />something great.</h3>
+          <p className="bento-card-note">Available for opportunities and exciting projects.</p>
+          <a className="contact-resume-button" href="/resume.pdf" target="_blank" rel="noreferrer">
+            <span>View Resume</span>
+            <FontAwesomeIcon icon={faSquareUpRight} aria-hidden="true" />
+          </a>
           <a className="resume-link" href="mailto:suphawit.aum.si@gmail.com">
             <FontAwesomeIcon icon={faEnvelope} aria-hidden="true" />
             <span>Start a conversation</span>
