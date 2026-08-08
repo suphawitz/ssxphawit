@@ -255,7 +255,7 @@ export function AboutSection() {
               <FontAwesomeIcon icon={faGithub} aria-hidden="true" />
               <span>GitHub</span>
             </a>
-            <a href="https://www.instagram.com/su_phawit.12" target="_blank" rel="noreferrer">
+            <a href="https://www.instagram.com/ssxphawit.si" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faInstagram} aria-hidden="true" />
               <span>Instagram</span>
             </a>

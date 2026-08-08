@@ -3,6 +3,9 @@
 import { useEffect, useRef, useState } from "react";
 import type { CSSProperties } from "react";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRightLong } from "@fortawesome/free-solid-svg-icons";
+import { getNearestExperienceId } from "@/lib/experience";
 import type { Experience } from "@/types/experience";
 
 export function ExperienceSection({ experiences }: { experiences: Experience[] }) {
@@ -16,23 +19,38 @@ export function ExperienceSection({ experiences }: { experiences: Experience[] }
     const section = sectionRef.current;
     if (!section || experiences.length === 0) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntry = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((first, second) => second.intersectionRatio - first.intersectionRatio)[0];
-        const visibleId = visibleEntry?.target.getAttribute("data-experience-id");
+    let frame = 0;
+    const updateActiveChapter = () => {
+      const positions = Object.values(roleRefs.current)
+        .filter((role): role is HTMLButtonElement => role !== null)
+        .map((role) => {
+          const rect = role.getBoundingClientRect();
 
-        if (visibleId) setActiveId(visibleId);
-      },
-      { rootMargin: "-35% 0px -45% 0px", threshold: [0.1, 0.5, 0.9] },
-    );
+          return {
+            id: role.dataset.experienceId ?? "",
+            center: rect.top + rect.height / 2,
+          };
+        })
+        .filter((position) => position.id);
 
-    Object.values(roleRefs.current).forEach((role) => {
-      if (role) observer.observe(role);
-    });
+      const nearestId = getNearestExperienceId(positions, window.innerHeight * 0.45);
+      if (nearestId) setActiveId(nearestId);
+      frame = 0;
+    };
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      if (frame === 0) frame = window.requestAnimationFrame(updateActiveChapter);
+    };
+
+    updateActiveChapter();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
   }, [experiences.length]);
 
   useEffect(() => {
@@ -126,7 +144,7 @@ export function ExperienceSection({ experiences }: { experiences: Experience[] }
                       <strong>{experience.title}</strong>
                       <small>{experience.period}</small>
                     </span>
-                    <span className="experience-role-arrow" aria-hidden="true">↗</span>
+                    <span className="experience-role-arrow" aria-hidden="true"><FontAwesomeIcon icon={faArrowRightLong} /></span>
                   </button>
                 </div>
               );

@@ -26,7 +26,7 @@ export function ContactSection() {
             <FontAwesomeIcon icon={faGithub} className="pr-1 text-lg" aria-hidden="true" />
             <span>GitHub</span>
           </a>
-          <a href="https://www.instagram.com/su_phawit.12" className="flex items-center" target="_blank" rel="noreferrer">
+          <a href="https://www.instagram.com/ssxphawit.si" className="flex items-center" target="_blank" rel="noreferrer">
             <FontAwesomeIcon icon={faInstagram} className="pr-1 text-lg" aria-hidden="true" />
             <span>Instagram</span>
           </a>

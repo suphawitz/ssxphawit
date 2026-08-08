@@ -628,6 +628,7 @@ h2 em {
 
 .experience-section {
   --experience-progress: 0;
+  border-top: 1px solid var(--line);
   padding-top: clamp(5rem, 9vw, 8rem);
 }
 
@@ -721,12 +722,13 @@ h2 em {
 .experience-role-arrow {
   color: var(--muted);
   font-size: 0.9rem;
+  transform: rotate(-45deg);
   transition: transform 260ms ease, color 260ms ease;
 }
 
 .experience-role.is-active .experience-role-arrow {
   color: #a9d29d;
-  transform: rotate(45deg);
+  transform: rotate(0deg);
 }
 
 .experience-detail-panel {
