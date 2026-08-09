@@ -1,15 +1,14 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import type { Project } from "@/types/project";
+
+import { ProjectBackLink } from "./project-back-link";
 
 export function ProjectDetail({ project }: { project: Project }) {
   return (
     <main className="project-detail-page">
       <div className="project-detail-topline mt-12 md:mt-0">
-        <Link className="back-link" href="/#work">
-          ← Back to selected work
-        </Link>
+        <ProjectBackLink className="back-link">← Back to work</ProjectBackLink>
         <span className="eyebrow">{project.category}</span>
       </div>
 
@@ -79,9 +78,9 @@ export function ProjectDetail({ project }: { project: Project }) {
 
       
 
-      <Link className="next-work-link" href="/#work">
-        Back to all work <span aria-hidden="true">↓</span>
-      </Link>
+      <ProjectBackLink className="next-work-link">
+        Back to previous page <span aria-hidden="true">↖</span>
+      </ProjectBackLink>
     </main>
   );
 }
