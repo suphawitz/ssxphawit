@@ -1972,7 +1972,7 @@ h2 em {
   padding-bottom: 0.4rem;
   color: #a9d29d;
   font-family: var(--display);
-  font-size: clamp(1.8rem, 3vw, 3rem);
+  font-size: clamp(1.5rem, 3vw, 3rem);
   letter-spacing: -0.05em;
 }
 
