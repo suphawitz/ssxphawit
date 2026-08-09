@@ -1,8 +1,23 @@
 import Image from "next/image";
 
+import { heroVideoSource } from "@/lib/hero";
+
 export function HeroSection() {
   return (
     <section className="hero-section" aria-labelledby="hero-title">
+      <video
+        className="hero-video"
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="metadata"
+        aria-hidden="true"
+      >
+        <source src={heroVideoSource} type="video/mp4" />
+      </video>
+      <div className="hero-video-overlay" aria-hidden="true" />
+
       <div className="eyebrow-row">
         <p className="eyebrow">Frontend developer</p>
         <p className="eyebrow eyebrow-muted">Scroll to explore ↓</p>
