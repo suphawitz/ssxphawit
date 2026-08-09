@@ -6,7 +6,7 @@ import type { Project } from "@/types/project";
 export function ProjectDetail({ project }: { project: Project }) {
   return (
     <main className="project-detail-page">
-      <div className="project-detail-topline">
+      <div className="project-detail-topline mt-12 md:mt-0">
         <Link className="back-link" href="/#work">
           ← Back to selected work
         </Link>
@@ -20,7 +20,7 @@ export function ProjectDetail({ project }: { project: Project }) {
           </p>
           <h1>{project.title}</h1>
         </div>
-        <p className="project-detail-summary">{project.summary}</p>
+        <p className="project-detail-summary google-sans">{project.summary}</p>
       </header>
 
       <div className="project-detail-visual">
@@ -65,7 +65,7 @@ export function ProjectDetail({ project }: { project: Project }) {
       <section className="highlight-section" aria-labelledby="highlight-title">
         <div>
           <p className="eyebrow">The details</p>
-          <h2 id="highlight-title">What I focused on.</h2>
+          <h2 id="highlight-title" className="pb-10">What I focused on.</h2>
         </div>
         <div className="highlight-list">
           {project.highlights.map((highlight) => (

@@ -33,7 +33,7 @@ export function HeroSection() {
             priority
             sizes="(max-width: 800px) 72vw, 30vw"
           />
-          <span className="hero-portrait-label">Frontend developer / Suphawit ↗</span>
+          <span className="hero-portrait-label">Suphawit Jaikaewma ↗</span>
         </div>
       </div>
 

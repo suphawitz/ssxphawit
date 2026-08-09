@@ -1,15 +1,15 @@
 [
   {
-    "slug": "aurora-dashboard",
+    "slug": "mindbrain",
     "title": "Mindbrain",
     "category": "Web application",
     "year": "2026",
-    "summary": "A calm analytics workspace for turning busy data into clear next steps.",
-    "description": "Aurora is a small dashboard concept designed around hierarchy, quick scanning, and a comfortable rhythm for repeated daily use.",
+    "summary": "เพิ่มโฟกัสและประสิทธิภาพการทำงานที่เพลง (Lo-Fi, Jazz) เสียงบรรยากาศที่ปรับได้ ระบบจับเวลา Pomodoro ที่ยืดหยุ่น",
+    "description": "Web app for increasing concentration and productivity. A mix of work music (Lo-Fi, Jazz, Classical, etc.), adjustable ambient sounds, Pomodoro Timer, and Todo list.",
     "role": "Frontend design and development",
-    "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Vibe code"],
     "image": "/projects/mindbrain.png",
-    "imageAlt": "Abstract analytics dashboard with a coral chart and pale green data cards",
+    "imageAlt": "",
     "accent": "coral",
     "featured": true,
     "liveUrl": "https://mindbrain.vercel.app",
@@ -17,115 +17,141 @@
     "highlights": [
       {
         "label": "Structure",
-        "body": "Built a responsive card system that keeps the most important metrics visible without crowding the screen."
+        "body": "Created intentionally to meet my own needs, based on personal problems I encountered."
       },
       {
-        "label": "Interaction",
-        "body": "Added focused hover and keyboard states so the dashboard remains useful without relying on decorative motion."
+        "label": "AI Code",
+        "body": "Clearly state your needs and the problem you want to solve to the AI, and provide step-by-step training so that it can learn, not just be given tasks."
       }
     ]
   },
   {
-    "slug": "field-notes",
-    "title": "Field Notes",
-    "category": "Editorial site",
-    "year": "2026",
-    "summary": "A lightweight reading experience for collecting observations, places, and small stories.",
-    "description": "Field Notes explores how a personal archive can feel warm and tactile while remaining easy to browse on a small screen.",
+    "slug": "keptcode-ui",
+    "title": "Keptcode UI",
+    "category": "Frontend / UI Design",
+    "year": "2024",
+    "summary": "เริ่มต้นการเรียนรู้และการออกแบบ UI ที่พัฒนาเอง โดยใช้แนวคิดการออกแบบที่เรียบง่ายและใช้งานง่าย",
+    "description": "Created a website prototype for my brother's project, which I developed myself.",
     "role": "UI implementation and responsive layout",
-    "technologies": ["React", "Next.js", "CSS Modules"],
+    "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "Slick framework"],
     "image": "/projects/Keptcode-01.png",
-    "imageAlt": "Editorial notes layout with a warm paper background and green index tabs",
+    "imageAlt": "",
     "accent": "leaf",
     "featured": true,
-    "liveUrl": "https://example.com/field-notes",
-    "repositoryUrl": "https://github.com/suphawitz/field-notes",
+    "liveUrl": "https://keptcode-demo.netlify.app/",
+    "repositoryUrl": "",
     "highlights": [
       {
-        "label": "Typography",
-        "body": "Created a clear contrast between expressive headings and a practical reading measure for longer notes."
+        "label": "Development",
+        "body": "I developed it from scratch, relying on help from various resources such as YouTube, Stack Overflow, and Documentation."
       },
       {
-        "label": "Responsive work",
-        "body": "Reworked the desktop index into a single-column mobile reading flow instead of simply shrinking the layout."
+        "label": "Responsive layout",
+        "body": "Create a modern design that is suitable for responsive viewing across all devices."
       }
     ]
   },
   {
-    "slug": "atlas-commerce",
-    "title": "Atlas Commerce",
-    "category": "Shopping experience",
-    "year": "2025",
-    "summary": "A focused storefront concept that makes browsing feel simple, visual, and intentional.",
-    "description": "Atlas is a commerce interface exercise focused on product discovery, clear states, and a checkout path with less friction.",
+    "slug": "clone-porsche",
+    "title": "Clone Porsche Taycan",
+    "category": "Clone UI Website",
+    "year": "2023",
+    "summary": "ฝึกฝนสกิลการออกแบบและพัฒนา UI ของเว็บไซต์ Porsche Taycan",
+    "description": "Practice frontend development skills by emulating web pages to learn and understand their various structures. By cloning the website Porsche Taycan.",
     "role": "Frontend development",
-    "technologies": ["React", "JavaScript", "Tailwind CSS"],
+    "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "Slick framework"],
     "image": "/projects/porsche-01.png",
     "imageAlt": "Minimal commerce grid with a bright orange product block and navigation rail",
     "accent": "orange",
     "featured": true,
-    "liveUrl": "https://example.com/atlas-commerce",
-    "repositoryUrl": "https://github.com/suphawitz/atlas-commerce",
+    "liveUrl": "https://clone-porsche-taycan.netlify.app/",
+    "repositoryUrl": "https://github.com/suphawitz/clone-Porsche-Taycan",
     "highlights": [
       {
-        "label": "Product browsing",
-        "body": "Used consistent image ratios and metadata placement to make a mixed product grid feel predictable."
+        "label": "Development",
+        "body": "I developed it from scratch, relying on help from various resources such as YouTube, Stack Overflow, and Documentation."
       },
       {
-        "label": "States",
-        "body": "Mapped empty, selected, and loading states before styling so the interface stays understandable beyond the happy path."
+        "label": "Learning Structure",
+        "body": "Learn to understand the structure of a website."
       }
     ]
   },
   {
-    "slug": "studio-forms",
-    "title": "Studio Forms",
-    "category": "Internal tool",
-    "year": "2025",
-    "summary": "A friendly form builder concept for teams that need structure without the clutter.",
-    "description": "Studio Forms is a small internal-tool concept that turns repetitive form setup into a more focused and legible flow.",
-    "role": "Frontend development and component design",
-    "technologies": ["React", "TypeScript", "Storybook"],
-    "image": "/projects/studio-forms.svg",
-    "imageAlt": "Form builder interface with stacked fields and a blue preview panel",
-    "accent": "blue",
+    "slug": "clone-nike",
+    "title": "Clone Nike",
+    "category": "Clone UI Website",
+    "year": "2023",
+    "summary": "ฝึกฝนสกิลการออกแบบและพัฒนา UI ของเว็บไซต์ Nike",
+    "description": "Practice frontend development skills by emulating web pages to learn and understand their various structures. By cloning the website Nike.",
+    "role": "Frontend development",
+    "technologies": ["HTML", "CSS"],
+    "image": "/projects/nike-01.png",
+    "imageAlt": "Nike website clone with a modern design",
+    "accent": "black",
     "featured": false,
-    "liveUrl": "https://example.com/studio-forms",
-    "repositoryUrl": "https://github.com/suphawitz/studio-forms",
+    "liveUrl": "https://sph-clone-nike.netlify.app/",
+    "repositoryUrl": "https://github.com/suphawitz/clone-Nike",
     "highlights": [
       {
-        "label": "Components",
-        "body": "Separated field primitives from page-level composition so the same controls can grow with the product."
+        "label": "Development",
+        "body": "I developed it from scratch, relying on help from various resources such as YouTube, Stack Overflow, and Documentation."
       },
       {
-        "label": "Usability",
-        "body": "Kept labels, validation messaging, and keyboard order explicit in the interface structure."
+        "label": "Learning Structure",
+        "body": "Learn to understand the structure of a website."
       }
     ]
   },
   {
-    "slug": "pulse-planner",
-    "title": "Pulse Planner",
-    "category": "Planning tool",
-    "year": "2025",
-    "summary": "A quiet weekly planning interface for seeing priorities without overloading the calendar.",
+    "slug": "plantique",
+    "title": "Clone Plantique",
+    "category": "Frontend / UI Design",
+    "year": "2022",
+    "summary": "ฝึกฝนสกิลการออกแบบและพัฒนา UI โดยหา Design จาก Figma",
     "description": "Pulse Planner is a small productivity concept where the visual system is intentionally restrained to keep attention on the work itself.",
     "role": "Frontend development",
-    "technologies": ["Next.js", "TypeScript", "CSS"],
-    "image": "/projects/pulse-planner.svg",
+    "technologies": ["Tailwind CSS", "JavaScript"],
+    "image": "/projects/growth-01.png",
     "imageAlt": "Weekly planning board with a dark navy sidebar and lavender task cards",
     "accent": "violet",
     "featured": false,
-    "liveUrl": "https://example.com/pulse-planner",
-    "repositoryUrl": "https://github.com/suphawitz/pulse-planner",
+    "liveUrl": "https://clone-plantique.netlify.app/",
+    "repositoryUrl": "https://github.com/suphawitz/clone-PlantiqueFigma",
     "highlights": [
       {
-        "label": "Layout",
-        "body": "Designed the week view as a flexible grid that collapses into a readable list on smaller screens."
+        "label": "Development",
+        "body": "I developed it from scratch, relying on help from various resources such as YouTube, Stack Overflow, and Documentation."
       },
       {
-        "label": "Feedback",
-        "body": "Used color and small status changes to confirm actions without adding noisy notifications."
+        "label": "Learning Structure",
+        "body": "Learn to understand the structure of a website."
+      }
+    ]
+  },
+  {
+    "slug": "lofino",
+    "title": "UI Lofino",
+    "category": "Frontend / UI Design",
+    "year": "2022",
+    "summary": "ออกแบบและพัฒนาเองโดยใช้ Tailwind CSS",
+    "description": "Pulse Planner is a small productivity concept where the visual system is intentionally restrained to keep attention on the work itself.",
+    "role": "Frontend development",
+    "technologies": ["Tailwind CSS", "CSS"],
+    "image": "/projects/lofino-01.png",
+    "imageAlt": "Weekly planning board with a dark navy sidebar and lavender task cards",
+    "accent": "violet",
+    "featured": false,
+    "liveUrl": "https://clone-plantique.netlify.app/",
+    "repositoryUrl": "https://github.com/suphawitz/Lofino-decoration",
+    "highlights": [
+      {
+        "label": "Development",
+        "body": "I developed it from scratch, relying on help from various resources such as YouTube, Stack Overflow, and Documentation."
+      },
+      {
+        "label": "Learning Structure",
+        "body": "Learn to understand the structure of a website."
       }
     ]
   }

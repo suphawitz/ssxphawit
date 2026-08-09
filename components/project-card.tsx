@@ -39,7 +39,7 @@ export function ProjectCard({ project }: { project: Project }) {
             </div>
             <h3>{project.title}</h3>
           </div>
-          <p>{project.summary}</p>
+          <p className="google-sans">{project.summary}</p>
         </div>
 
         <ul className="tag-list" aria-label={`${project.title} technologies`}>

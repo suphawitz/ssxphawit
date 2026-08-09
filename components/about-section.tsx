@@ -121,7 +121,7 @@ export function AboutSection() {
             <FontAwesomeIcon icon={faLayerGroup} aria-hidden="true" />
             Core frontend stack
           </p>
-          <strong className="bento-stat">Vide code</strong>
+          <strong className="bento-stat">Vibe code</strong>
           <p className="bento-card-note">Next.js / TypeScript / CSS</p>
           <div className="stack-icon-list" aria-label="Core frontend technologies">
             {frontendStack.map((tool) => (

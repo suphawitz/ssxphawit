@@ -4,6 +4,7 @@ import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 
 import { SiteHeader } from "@/components/site-header";
+import { googleSans } from "@/lib/fonts";
 
 import "./globals.css";
 
@@ -24,7 +25,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="h-full antialiased">
+    <html lang="en" className={`h-full antialiased ${googleSans.variable}`}>
       <body className="min-h-full flex flex-col">
         <SiteHeader />
         {children}

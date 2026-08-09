@@ -13,6 +13,6 @@
     "title": "Frontend Dev & Manual Tester",
     "context": "Cyberkit Digital Co, Ltd.",
     "description": "A dual role combining front-end UI development and manual QA testing, focused on finding bugs and collaborating remotely with developers to ensure software quality for E-commerce and ERP systems.",
-    "contributions": ["HTML", "CSS", "PHP", "Testing", "Bug Reporting"]
+    "contributions": ["JavaScript", "CSS", "PHP", "Testing", "Bug Reporting", "Tailwind CSS"]
   }
 ]
