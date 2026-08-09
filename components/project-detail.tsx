@@ -33,6 +33,20 @@ export function ProjectDetail({ project }: { project: Project }) {
         />
       </div>
 
+      <div className="project-links">
+        {project.liveUrl && (
+          <a href={project.liveUrl} className="border rounded-4xl py-3 px-6" target="_blank" rel="noreferrer">
+            Live project ↗
+          </a>
+        )}
+
+        {project.repositoryUrl && (
+          <a href={project.repositoryUrl} className="border rounded-4xl py-3 px-6" target="_blank" rel="noreferrer">
+            View repository ↗
+          </a>
+        )}
+      </div>
+
       <div className="project-detail-context">
         <div>
           <p className="eyebrow">The project</p>
@@ -63,14 +77,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         </div>
       </section>
 
-      <div className="project-links">
-        <a href={project.liveUrl} target="_blank" rel="noreferrer">
-          Visit live project ↗
-        </a>
-        <a href={project.repositoryUrl} target="_blank" rel="noreferrer">
-          View repository ↗
-        </a>
-      </div>
+      
 
       <Link className="next-work-link" href="/#work">
         Back to all work <span aria-hidden="true">↓</span>

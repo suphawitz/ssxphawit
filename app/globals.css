@@ -152,10 +152,13 @@ a:focus-visible {
 .back-link:hover,
 .back-link:focus-visible,
 .text-link:hover,
-.text-link:focus-visible,
-.project-links a:hover,
-.project-links a:focus-visible {
+.text-link:focus-visible {
   color: var(--accent);
+}
+
+.project-links a:hover {
+  color: #fff;
+  background: var(--accent);
 }
 
 .availability-pill {
@@ -529,7 +532,7 @@ h2 em {
   gap: clamp(3rem, 8vw, 4rem) clamp(1rem, 3vw, 3rem);
 }
 
-.project-card:nth-child(2) {
+.project-card:nth-child(even) {
   margin-top: clamp(4rem, 12vw, 11rem);
 }
 
@@ -2166,7 +2169,6 @@ h2 em {
 .next-work-link {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid var(--line);
   padding-top: 1rem;
   font-family: var(--display);
   font-size: clamp(1.8rem, 4vw, 3.5rem);

@@ -1,19 +1,19 @@
 [
   {
     "slug": "aurora-dashboard",
-    "title": "Aurora Dashboard",
+    "title": "Mindbrain",
     "category": "Web application",
     "year": "2026",
     "summary": "A calm analytics workspace for turning busy data into clear next steps.",
     "description": "Aurora is a small dashboard concept designed around hierarchy, quick scanning, and a comfortable rhythm for repeated daily use.",
     "role": "Frontend design and development",
-    "technologies": ["Next.js", "TypeScript", "CSS"],
-    "image": "/projects/mindbrain-1.png",
+    "technologies": ["Next.js", "TypeScript", "Tailwind CSS"],
+    "image": "/projects/mindbrain.png",
     "imageAlt": "Abstract analytics dashboard with a coral chart and pale green data cards",
     "accent": "coral",
     "featured": true,
-    "liveUrl": "https://example.com/aurora-dashboard",
-    "repositoryUrl": "https://github.com/suphawitz/aurora-dashboard",
+    "liveUrl": "https://mindbrain.vercel.app",
+    "repositoryUrl": "",
     "highlights": [
       {
         "label": "Structure",
