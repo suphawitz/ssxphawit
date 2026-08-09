@@ -38,7 +38,7 @@ export function HeroSection() {
       </div>
 
       <div className="hero-footer">
-        <span>01 — 05</span>
+        <span>01 — 04</span>
         <span>Design / Code / Detail</span>
       </div>
     </section>

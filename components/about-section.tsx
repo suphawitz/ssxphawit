@@ -64,7 +64,7 @@ export function AboutSection() {
             </div>
           </div>
           <div className="education-degree">
-            <span className="education-degree-label">Degree</span>
+            <span className="education-degree-label mb-3">Degree</span>
             <h3>Bachelor of <em>Business Administration</em></h3>
             <p>Major in Digital Business Innovation (DBI)</p>
           </div>

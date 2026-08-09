@@ -115,7 +115,7 @@
     "image": "/projects/growth-01.png",
     "imageAlt": "Weekly planning board with a dark navy sidebar and lavender task cards",
     "accent": "violet",
-    "featured": false,
+    "featured": true,
     "liveUrl": "https://clone-plantique.netlify.app/",
     "repositoryUrl": "https://github.com/suphawitz/clone-PlantiqueFigma",
     "highlights": [

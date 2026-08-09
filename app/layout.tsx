@@ -13,7 +13,7 @@ config.autoAddCss = false;
 export const metadata: Metadata = {
   title: {
     default: "ssxphawit - Frontend Developer",
-    template: "Suphawit",
+    template: "ssxphawit - Frontend Developer",
   },
   description:
     "Portfolio of Suphawit Jaikaewma, a frontend developer building thoughtful, responsive digital experiences.",

@@ -534,7 +534,7 @@ h2 em {
 .project-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: clamp(3rem, 8vw, 4rem) clamp(1rem, 3vw, 3rem);
+  gap: clamp(2.6rem, 8vw, 3rem) clamp(1rem, 3vw, 3rem);
 }
 
 .project-card:nth-child(even) {
@@ -1940,6 +1940,7 @@ h2 em {
 
 .social-links {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   margin-top: 3.5rem;
   color: #d2d9d3;
