@@ -1,4 +1,4 @@
-# ssxphawit - Portfolio by Suphhawit Jaikaewma
+# ssxphawit - Portfolio by Suphawit Jaikaewma
 
 An editorial, interactive portfolio for Suphawit Jaikaewma — a frontend developer focused on building clear, responsive, and thoughtful digital experiences.
 
