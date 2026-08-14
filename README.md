@@ -1,36 +1,112 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ssxphawit - Portfolio by Suphhawit Jaikaewma
 
-## Getting Started
+An editorial, interactive portfolio for Suphawit Jaikaewma — a frontend developer focused on building clear, responsive, and thoughtful digital experiences.
 
-First, run the development server:
+The site is designed for recruiter scanning first, with restrained motion, project storytelling, responsive layouts, and a visual system that can grow with real portfolio content.
 
+🔗 **Live Demo:** [https://ssxphawit.vercel.app](https://ssxphawit.vercel.app/)
+
+
+## 📸 Describe the system screen. (Screenshots)
+(/public/example-website.png)
+
+## ✨ Highlightss
+
+- Responsive portfolio layout for desktop, tablet, and mobile
+- Interactive hero with seamless video background
+- Selected work and all-work project index
+- Individual project detail pages with technology tags and project highlights
+- Scroll-reveal sections and scroll-driven experience chapters
+- Bento-style About section
+- Animated technology marquee using icons from `public/tools`
+- English-first content and accessible navigation
+- Reduced-motion support for users who prefer less animation
+- Data-driven project and experience content stored separately from components
+
+## 🛠 Tech stack
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Deployment:** Vercel
+- **Agent:** Codex
+
+## 🚀 Getting started
+### Requirements
+- Node.js 20.9 or newer
+- npm
+
+### Install dependencies
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Start the development server
+```bash
+npm run dev
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Available scripts
+```bash
+npm run dev      # Start the local development server
+npm run lint     # Run ESLint
+npm test         # Run the Node test suite
+npm run build    # Create a production build
+npm run start    # Start the production server
+```
 
-## Learn More
+## Routes
+| Route | Purpose |
+| --- | --- |
+| `/` | Main portfolio page with hero, about, work, experience, and contact sections |
+| `/work` | Full project index |
+| `/work/[slug]` | Project detail page generated from the project data |
 
-To learn more about Next.js, take a look at the following resources:
+## Content management
+Project content lives in [`data/projects.json`](./data/projects.json). Add or update a project there rather than hard-coding project details in a component.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Each project includes fields such as:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```json
+{
+  "slug": "project-slug",
+  "title": "Project title",
+  "category": "Web application",
+  "year": "2026",
+  "role": "Frontend developer",
+  "summary": "A short project summary.",
+  "description": "A longer project description.",
+  "image": "/projects/project-image.png",
+  "imageAlt": "Description of the project visual",
+  "technologies": ["React", "TypeScript"],
+  "highlights": []
+}
+```
 
-## Deploy on Vercel
+Experience content is stored in [`data/experience.json`](./data/experience.json). Images and other static assets belong in [`public/`](./public/), with project images in [`public/projects/`](./public/projects/) and technology icons in [`public/tools/`](./public/tools/).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Project structure
+```text
+app/                  Next.js routes, layout, metadata, and global styles
+components/           Reusable portfolio sections and UI components
+data/                 JSON content for projects and experience
+lib/                  Data access, font configuration, and small utilities
+public/               Images, icons, video, and downloadable assets
+types/                Shared TypeScript data types
+docs/superpowers/     Design specifications and implementation plans
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deployment
+Create a production build locally before deployment:
+
+```bash
+npm run build
+npm run start
+```
+
+## 💡 Key Learnings
+- Using AI Agent.
+- Studying systems architecture / state management / performance improvement.
+- Resolving technical issues encountered in the project.
+
+## 👤 License
+This is a personal portfolio project. The source code and visual assets are intended for personal use and are not licensed for redistribution without permission.
