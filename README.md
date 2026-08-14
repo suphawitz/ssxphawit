@@ -8,7 +8,7 @@ The site is designed for recruiter scanning first, with restrained motion, proje
 
 
 ## 📸 Describe the system screen. (Screenshots)
-(/public/example-website.png)
+![Screenshots Website Preview](./public/example-website.png)
 
 ## ✨ Highlightss
 
