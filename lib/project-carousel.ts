@@ -21,3 +21,9 @@ export function getSwipeStep(
   if (Math.abs(deltaX) < distanceThreshold && velocity < 0.45) return 0;
   return deltaX < 0 ? 1 : -1;
 }
+
+export function getKeyboardStep(key: string): -1 | 0 | 1 {
+  if (key === "ArrowRight") return 1;
+  if (key === "ArrowLeft") return -1;
+  return 0;
+}
