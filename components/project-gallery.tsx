@@ -32,12 +32,18 @@ function getExpandLabel(image: ProjectImage) {
   return image.alt ? `Expand ${image.alt}` : "Expand project image";
 }
 
-function ExpandButton({ image, onExpand }: { image: ProjectImage; onExpand: () => void }) {
+function ExpandButton({
+  image,
+  onExpand,
+}: {
+  image: ProjectImage;
+  onExpand: (trigger: HTMLButtonElement) => void;
+}) {
   return (
     <button
       aria-label={getExpandLabel(image)}
       className="project-gallery-expand"
-      onClick={onExpand}
+      onClick={(event) => onExpand(event.currentTarget)}
       type="button"
     >
       <span className="project-gallery-expand-icon" aria-hidden="true">↗</span>
@@ -56,7 +62,7 @@ function ProjectGalleryImage({
   index: number;
   isActive: boolean;
   offset: number;
-  onExpand: () => void;
+  onExpand: (trigger: HTMLButtonElement) => void;
 }) {
   const isSvg = image.src.endsWith(".svg");
   const boundedOffset = Math.max(-2, Math.min(2, offset));
@@ -89,7 +95,7 @@ function StaticProjectImage({
   onExpand,
 }: {
   image: ProjectImage;
-  onExpand: () => void;
+  onExpand: (trigger: HTMLButtonElement) => void;
 }) {
   const isSvg = image.src.endsWith(".svg");
 
@@ -118,6 +124,7 @@ export function ProjectGallery({ project }: { project: Project }) {
   const [isDragging, setIsDragging] = useState(false);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const galleryRef = useRef<HTMLElement>(null);
+  const expandTriggerRef = useRef<HTMLButtonElement | null>(null);
   const pointerStart = useRef<PointerStart>({ pointerId: -1, time: 0, x: 0, y: 0 });
   const suppressExpand = useRef(false);
 
@@ -198,13 +205,19 @@ export function ProjectGallery({ project }: { project: Project }) {
     navigate(step);
   }
 
-  function handleExpand() {
+  function handleExpand(trigger: HTMLButtonElement) {
     if (suppressExpand.current) {
       suppressExpand.current = false;
       return;
     }
 
+    expandTriggerRef.current = trigger;
     setIsLightboxOpen(true);
+  }
+
+  function handleLightboxClose() {
+    setIsLightboxOpen(false);
+    window.requestAnimationFrame(() => expandTriggerRef.current?.focus());
   }
 
   const galleryStyle = {
@@ -268,7 +281,7 @@ export function ProjectGallery({ project }: { project: Project }) {
         activeIndex={activeIndex}
         images={images}
         isOpen={isLightboxOpen}
-        onClose={() => setIsLightboxOpen(false)}
+        onClose={handleLightboxClose}
         onNavigate={navigate}
       />
     </>

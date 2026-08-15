@@ -46,7 +46,7 @@
     "role": "UI implementation and responsive layout",
     "technologies": ["HTML", "CSS", "JavaScript", "Bootstrap", "Slick framework"],
     "image": "/projects/Keptcode-01.png",
-    "imageAlt": "",
+    "imageAlt": "Keptcode UI website prototype",
     "accent": "leaf",
     "featured": true,
     "liveUrl": "https://keptcode-demo.netlify.app/",

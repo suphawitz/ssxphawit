@@ -46,7 +46,9 @@ export function ProjectLightbox({
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    if (isOpen && !dialog.open) dialog.showModal();
+    if (isOpen && !dialog.open) {
+      dialog.showModal();
+    }
     if (!isOpen && dialog.open) dialog.close();
   }, [isOpen]);
 
@@ -106,6 +108,12 @@ export function ProjectLightbox({
   }
 
   function handleKeyDown(event: ReactKeyboardEvent<HTMLDialogElement>) {
+    if (event.key === "Escape") {
+      event.preventDefault();
+      dialogRef.current?.close();
+      return;
+    }
+
     if (!hasNavigation) return;
 
     const step = getKeyboardStep(event.key);
@@ -119,6 +127,11 @@ export function ProjectLightbox({
     if (event.target === event.currentTarget) dialogRef.current?.close();
   }
 
+  function handleDialogClose() {
+    resetPointerGesture();
+    onClose();
+  }
+
   const lightboxStyle = {
     "--project-lightbox-drag": `${dragX}px`,
   } as CSSProperties;
@@ -130,7 +143,7 @@ export function ProjectLightbox({
       className={`project-lightbox${isDragging ? " is-dragging" : ""}`}
       onCancel={resetPointerGesture}
       onClick={handleBackdropClick}
-      onClose={onClose}
+      onClose={handleDialogClose}
       onKeyDown={handleKeyDown}
     >
       <button
@@ -159,7 +172,7 @@ export function ProjectLightbox({
           alt={activeImage.alt}
           draggable={false}
           fill
-          sizes="100vw"
+          sizes="(max-width: 800px) calc(100vw - 2rem), calc(100vw - 5rem)"
           unoptimized={activeImage.src.endsWith(".svg")}
         />
       </div>
