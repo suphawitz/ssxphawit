@@ -27,3 +27,7 @@ export function getKeyboardStep(key: string): -1 | 0 | 1 {
   if (key === "ArrowLeft") return -1;
   return 0;
 }
+
+export function isProjectGalleryClick(deltaX: number, deltaY: number) {
+  return Math.hypot(deltaX, deltaY) <= 8;
+}
