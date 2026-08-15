@@ -1,8 +1,7 @@
-import Image from "next/image";
-
 import type { Project } from "@/types/project";
 
 import { ProjectBackLink } from "./project-back-link";
+import { ProjectGallery } from "./project-gallery";
 
 export function ProjectDetail({ project }: { project: Project }) {
   return (
@@ -22,15 +21,7 @@ export function ProjectDetail({ project }: { project: Project }) {
         <p className="project-detail-summary google-sans">{project.summary}</p>
       </header>
 
-      <div className="project-detail-visual">
-        <Image
-          src={project.image}
-          alt={project.imageAlt}
-          fill
-          priority
-          sizes="(max-width: 900px) 100vw, 92vw"
-        />
-      </div>
+      <ProjectGallery project={project} />
 
       <div className="project-links">
         {project.liveUrl && (

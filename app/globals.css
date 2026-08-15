@@ -2134,15 +2134,65 @@ h2 em {
   margin-bottom: 0.3rem;
 }
 
-.project-detail-visual {
+.project-gallery {
   position: relative;
+  overflow: hidden;
+  background: var(--surface);
+}
+
+.project-gallery-single {
+  aspect-ratio: 1.75;
+}
+
+.project-gallery-track {
+  display: flex;
+  width: max-content;
+  animation: project-gallery-loop 32s linear infinite;
+}
+
+.project-gallery-group {
+  display: flex;
+  flex: none;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.project-gallery-card {
+  position: relative;
+  flex: 0 0 clamp(18rem, 42vw, 34rem);
   aspect-ratio: 1.75;
   overflow: hidden;
   background: var(--surface);
 }
 
-.project-detail-visual img {
+.project-gallery-single .project-gallery-card {
+  width: 100%;
+  height: 100%;
+  flex-basis: 100%;
+}
+
+.project-gallery-card img {
   object-fit: cover;
+}
+
+.project-gallery-cover-label {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 1;
+  margin: 0;
+  border-radius: 999px;
+  background: rgba(251, 250, 246, 0.88);
+  padding: 0.45rem 0.7rem;
+  color: var(--foreground);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+@keyframes project-gallery-loop {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
 .project-detail-context {
@@ -2389,8 +2439,13 @@ h2 em {
     padding-inline: 1.25rem;
   }
 
-  .project-detail-visual {
+  .project-gallery-single,
+  .project-gallery-card {
     aspect-ratio: 1.1;
+  }
+
+  .project-gallery-card {
+    flex-basis: 78vw;
   }
 
   .tech-marquee-heading {
@@ -2415,6 +2470,15 @@ h2 em {
   .tech-marquee-track {
     animation: none;
     transform: none;
+  }
+
+  .project-gallery-track {
+    animation: none;
+    transform: none;
+  }
+
+  .project-gallery-group-duplicate {
+    display: none;
   }
 
   .scroll-reveal {

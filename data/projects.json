@@ -9,7 +9,18 @@
     "role": "Frontend design and development",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Vibe code"],
     "image": "/projects/mindbrain.png",
-    "imageAlt": "",
+    "imageAlt": "Mindbrain productivity dashboard",
+    "coverImage": "/projects/mindbrain.png",
+    "gallery": [
+      {
+        "src": "/projects/mindbrain-1.png",
+        "alt": "Mindbrain focus dashboard"
+      },
+      {
+        "src": "/projects/mindbrain-2.png",
+        "alt": "Mindbrain productivity interface"
+      }
+    ],
     "accent": "coral",
     "featured": true,
     "liveUrl": "https://mindbrain.vercel.app",

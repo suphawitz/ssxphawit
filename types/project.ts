@@ -3,6 +3,11 @@ export interface ProjectHighlight {
   body: string;
 }
 
+export interface ProjectImage {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -14,6 +19,8 @@ export interface Project {
   technologies: string[];
   image: string;
   imageAlt: string;
+  coverImage?: string;
+  gallery?: ProjectImage[];
   accent: string;
   featured: boolean;
   liveUrl: string;
