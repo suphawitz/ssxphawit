@@ -13,27 +13,50 @@ import {
   getCircularOffset,
   getKeyboardStep,
   getSwipeStep,
+  isProjectGalleryClick,
   wrapProjectIndex,
 } from "@/lib/project-carousel";
 import { getProjectGallery } from "@/lib/projects";
 import type { Project, ProjectImage } from "@/types/project";
 
+import { ProjectLightbox } from "./project-lightbox";
+
 type PointerStart = {
   pointerId: number;
   time: number;
   x: number;
+  y: number;
 };
+
+function getExpandLabel(image: ProjectImage) {
+  return image.alt ? `Expand ${image.alt}` : "Expand project image";
+}
+
+function ExpandButton({ image, onExpand }: { image: ProjectImage; onExpand: () => void }) {
+  return (
+    <button
+      aria-label={getExpandLabel(image)}
+      className="project-gallery-expand"
+      onClick={onExpand}
+      type="button"
+    >
+      <span className="project-gallery-expand-icon" aria-hidden="true">↗</span>
+    </button>
+  );
+}
 
 function ProjectGalleryImage({
   image,
   index,
   isActive,
   offset,
+  onExpand,
 }: {
   image: ProjectImage;
   index: number;
   isActive: boolean;
   offset: number;
+  onExpand: () => void;
 }) {
   const isSvg = image.src.endsWith(".svg");
   const boundedOffset = Math.max(-2, Math.min(2, offset));
@@ -53,14 +76,21 @@ function ProjectGalleryImage({
         fill
         loading={index === 0 ? undefined : "lazy"}
         preload={index === 0}
-        sizes="(max-width: 700px) 78vw, (max-width: 1200px) 66vw, 46rem"
+        sizes="(max-width: 700px) 78vw, (max-width: 1200px) 78vw, 54rem"
         unoptimized={isSvg}
       />
+      {isActive ? <ExpandButton image={image} onExpand={onExpand} /> : null}
     </figure>
   );
 }
 
-function StaticProjectImage({ image }: { image: ProjectImage }) {
+function StaticProjectImage({
+  image,
+  onExpand,
+}: {
+  image: ProjectImage;
+  onExpand: () => void;
+}) {
   const isSvg = image.src.endsWith(".svg");
 
   return (
@@ -75,6 +105,7 @@ function StaticProjectImage({ image }: { image: ProjectImage }) {
           sizes="(max-width: 700px) 100vw, (max-width: 1200px) 92vw, 73.75rem"
           unoptimized={isSvg}
         />
+        <ExpandButton image={image} onExpand={onExpand} />
       </figure>
     </div>
   );
@@ -85,11 +116,17 @@ export function ProjectGallery({ project }: { project: Project }) {
   const [activeIndex, setActiveIndex] = useState(0);
   const [dragX, setDragX] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const galleryRef = useRef<HTMLElement>(null);
-  const pointerStart = useRef<PointerStart>({ pointerId: -1, time: 0, x: 0 });
+  const pointerStart = useRef<PointerStart>({ pointerId: -1, time: 0, x: 0, y: 0 });
+  const suppressExpand = useRef(false);
+
+  function navigate(step: -1 | 1) {
+    setActiveIndex((current) => wrapProjectIndex(current + step, images.length));
+  }
 
   function resetPointerGesture() {
-    pointerStart.current = { pointerId: -1, time: 0, x: 0 };
+    pointerStart.current = { pointerId: -1, time: 0, x: 0, y: 0 };
     setDragX(0);
     setIsDragging(false);
   }
@@ -101,7 +138,9 @@ export function ProjectGallery({ project }: { project: Project }) {
       pointerId: event.pointerId,
       time: performance.now(),
       x: event.clientX,
+      y: event.clientY,
     };
+    suppressExpand.current = false;
     event.currentTarget.setPointerCapture(event.pointerId);
     setDragX(0);
     setIsDragging(true);
@@ -119,19 +158,25 @@ export function ProjectGallery({ project }: { project: Project }) {
   function handlePointerUp(event: ReactPointerEvent<HTMLElement>) {
     if (event.pointerId !== pointerStart.current.pointerId) return;
 
+    const deltaX = event.clientX - pointerStart.current.x;
+    const deltaY = event.clientY - pointerStart.current.y;
     const elapsedMs = performance.now() - pointerStart.current.time;
     const width = galleryRef.current?.clientWidth ?? window.innerWidth;
-    const step = getSwipeStep(event.clientX - pointerStart.current.x, elapsedMs, width);
+    const step = getSwipeStep(deltaX, elapsedMs, width);
+    suppressExpand.current = !isProjectGalleryClick(deltaX, deltaY);
 
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
-    if (step !== 0) {
-      setActiveIndex((current) => wrapProjectIndex(current + step, images.length));
-    }
-
+    if (step !== 0) navigate(step);
     resetPointerGesture();
+
+    if (suppressExpand.current) {
+      window.setTimeout(() => {
+        suppressExpand.current = false;
+      }, 0);
+    }
   }
 
   function handlePointerCancel(event: ReactPointerEvent<HTMLElement>) {
@@ -141,6 +186,7 @@ export function ProjectGallery({ project }: { project: Project }) {
       event.currentTarget.releasePointerCapture(event.pointerId);
     }
 
+    suppressExpand.current = false;
     resetPointerGesture();
   }
 
@@ -149,18 +195,25 @@ export function ProjectGallery({ project }: { project: Project }) {
     if (step === 0) return;
 
     event.preventDefault();
-    setActiveIndex((current) => wrapProjectIndex(current + step, images.length));
+    navigate(step);
   }
 
-  if (images.length === 1) {
-    return <StaticProjectImage image={images[0]} />;
+  function handleExpand() {
+    if (suppressExpand.current) {
+      suppressExpand.current = false;
+      return;
+    }
+
+    setIsLightboxOpen(true);
   }
 
   const galleryStyle = {
     "--project-gallery-drag": `${dragX}px`,
   } as CSSProperties;
 
-  return (
+  const gallery = images.length === 1 ? (
+    <StaticProjectImage image={images[0]} onExpand={handleExpand} />
+  ) : (
     <section
       ref={galleryRef}
       aria-label={`Project image gallery. Image ${activeIndex + 1} of ${images.length}`}
@@ -187,6 +240,7 @@ export function ProjectGallery({ project }: { project: Project }) {
               isActive={offset === 0}
               key={image.src}
               offset={offset}
+              onExpand={handleExpand}
             />
           );
         })}
@@ -205,5 +259,18 @@ export function ProjectGallery({ project }: { project: Project }) {
         Image {activeIndex + 1} of {images.length}
       </p>
     </section>
+  );
+
+  return (
+    <>
+      {gallery}
+      <ProjectLightbox
+        activeIndex={activeIndex}
+        images={images}
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+        onNavigate={navigate}
+      />
+    </>
   );
 }
