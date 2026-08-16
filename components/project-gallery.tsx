@@ -24,6 +24,7 @@ import type { Project, ProjectImage } from "@/types/project";
 import { ProjectLightbox } from "./project-lightbox";
 
 type PointerStart = {
+  isInteractiveControl: boolean;
   pointerId: number;
   time: number;
   x: number;
@@ -73,6 +74,7 @@ function SideCardButton({
         event.stopPropagation();
         onNavigate(step);
       }}
+      style={{ position: "absolute", inset: 0, zIndex: 6 }}
       type="button"
     >
       <span className="project-gallery-side-control-icon" aria-hidden="true">
@@ -164,7 +166,13 @@ export function ProjectGallery({ project }: { project: Project }) {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const galleryRef = useRef<HTMLElement>(null);
   const expandTriggerRef = useRef<HTMLButtonElement | null>(null);
-  const pointerStart = useRef<PointerStart>({ pointerId: -1, time: 0, x: 0, y: 0 });
+  const pointerStart = useRef<PointerStart>({
+    isInteractiveControl: false,
+    pointerId: -1,
+    time: 0,
+    x: 0,
+    y: 0,
+  });
   const suppressExpand = useRef(false);
 
   function navigate(step: -1 | 1) {
@@ -172,7 +180,13 @@ export function ProjectGallery({ project }: { project: Project }) {
   }
 
   function resetPointerGesture() {
-    pointerStart.current = { pointerId: -1, time: 0, x: 0, y: 0 };
+    pointerStart.current = {
+      isInteractiveControl: false,
+      pointerId: -1,
+      time: 0,
+      x: 0,
+      y: 0,
+    };
     setDragX(0);
     setIsDragging(false);
   }
@@ -180,7 +194,11 @@ export function ProjectGallery({ project }: { project: Project }) {
   function handlePointerDown(event: ReactPointerEvent<HTMLElement>) {
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
+    const isInteractiveControl =
+      event.target instanceof Element && event.target.closest("button, a") !== null;
+
     pointerStart.current = {
+      isInteractiveControl,
       pointerId: event.pointerId,
       time: performance.now(),
       x: event.clientX,
@@ -188,7 +206,7 @@ export function ProjectGallery({ project }: { project: Project }) {
     };
     suppressExpand.current = false;
     setDragX(0);
-    setIsDragging(true);
+    setIsDragging(!isInteractiveControl);
   }
 
   function handlePointerMove(event: ReactPointerEvent<HTMLElement>) {
@@ -199,7 +217,11 @@ export function ProjectGallery({ project }: { project: Project }) {
     const deltaY = event.clientY - pointerStart.current.y;
 
     if (
-      shouldCaptureProjectGalleryPointer(deltaX, deltaY) &&
+      shouldCaptureProjectGalleryPointer(
+        deltaX,
+        deltaY,
+        pointerStart.current.isInteractiveControl,
+      ) &&
       !event.currentTarget.hasPointerCapture(event.pointerId)
     ) {
       event.currentTarget.setPointerCapture(event.pointerId);
@@ -216,8 +238,10 @@ export function ProjectGallery({ project }: { project: Project }) {
     const deltaY = event.clientY - pointerStart.current.y;
     const elapsedMs = performance.now() - pointerStart.current.time;
     const width = galleryRef.current?.clientWidth ?? window.innerWidth;
-    const step = getSwipeStep(deltaX, elapsedMs, width);
-    suppressExpand.current = !isProjectGalleryClick(deltaX, deltaY);
+    const isInteractiveControl = pointerStart.current.isInteractiveControl;
+    const step = isInteractiveControl ? 0 : getSwipeStep(deltaX, elapsedMs, width);
+    suppressExpand.current =
+      !isInteractiveControl && !isProjectGalleryClick(deltaX, deltaY);
 
     if (event.currentTarget.hasPointerCapture(event.pointerId)) {
       event.currentTarget.releasePointerCapture(event.pointerId);

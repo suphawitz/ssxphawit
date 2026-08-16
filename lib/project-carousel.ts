@@ -38,6 +38,11 @@ export function isProjectGalleryClick(deltaX: number, deltaY: number) {
   return Math.hypot(deltaX, deltaY) <= 8;
 }
 
-export function shouldCaptureProjectGalleryPointer(deltaX: number, deltaY: number) {
+export function shouldCaptureProjectGalleryPointer(
+  deltaX: number,
+  deltaY: number,
+  isInteractiveControl = false,
+) {
+  if (isInteractiveControl) return false;
   return !isProjectGalleryClick(deltaX, deltaY);
 }
