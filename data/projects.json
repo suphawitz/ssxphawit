@@ -8,16 +8,16 @@
     "description": "Web app for increasing concentration and productivity. A mix of work music (Lo-Fi, Jazz, Classical, etc.), adjustable ambient sounds, Pomodoro Timer, and Todo list.",
     "role": "Frontend design and development",
     "technologies": ["Next.js", "TypeScript", "Tailwind CSS", "Vibe code"],
-    "image": "/projects/mindbrain.png",
+    "image": "/projects/mindbrain-1.png",
     "imageAlt": "Mindbrain productivity dashboard",
-    "coverImage": "/projects/mindbrain.png",
+    "coverImage": "/projects/mindbrain-1.png",
     "gallery": [
       {
-        "src": "/projects/mindbrain-1.png",
+        "src": "/projects/mindbrain-2.png",
         "alt": "Mindbrain focus dashboard"
       },
       {
-        "src": "/projects/mindbrain-2.png",
+        "src": "/projects/mindbrain-3.png",
         "alt": "Mindbrain productivity interface"
       }
     ],
@@ -59,6 +59,43 @@
       {
         "label": "Responsive layout",
         "body": "Create a modern design that is suitable for responsive viewing across all devices."
+      }
+    ]
+  },
+  {
+    "slug": "riakchang",
+    "title": "Riakchang",
+    "category": "Application",
+    "year": "2025",
+    "summary": "แอปแจ้งซ่อมสำหรับหอพัก ทีมีการแจ้งเตือนและอปเดทสถานะผ่านตัวแอป รวมไปถึงแจ้งเตือนผ่าน Telegram Bot",
+    "description": "A maintenance request app for dormitories, with notifications and status updates via the app itself, as well as notifications via a Telegram Bot.",
+    "role": "FlutterFlow appication",
+    "technologies": ["FlutterFlow", "Supabase", "Telegram API", "PostgreSQL"],
+    "image": "/projects/riakchang-1.png",
+    "imageAlt": "Riakchang",
+    "coverImage": "/projects/riakchang-1.png",
+    "gallery": [
+      {
+        "src": "/projects/riakchang-2.png",
+        "alt": "Riakchang"
+      },
+      {
+        "src": "/projects/riakchang-3.png",
+        "alt": "Riakchang"
+      }
+    ],
+    "accent": "coral",
+    "featured": true,
+    "liveUrl": "",
+    "repositoryUrl": "",
+    "highlights": [
+      {
+        "label": "Low-code / No-code",
+        "body": "Learn to build apps through Low-code/No-code and how to structure and manage the app's workflow."
+      },
+      {
+        "label": "Database",
+        "body": "Understanding database usage PostgreSQL, table linking, and API connectivity."
       }
     ]
   },
@@ -126,7 +163,7 @@
     "image": "/projects/growth-01.png",
     "imageAlt": "Weekly planning board with a dark navy sidebar and lavender task cards",
     "accent": "violet",
-    "featured": true,
+    "featured": false,
     "liveUrl": "https://clone-plantique.netlify.app/",
     "repositoryUrl": "https://github.com/suphawitz/clone-PlantiqueFigma",
     "highlights": [
