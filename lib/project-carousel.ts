@@ -10,6 +10,12 @@ export function getCircularOffset(index: number, activeIndex: number, total: num
   return forwardOffset > total / 2 ? forwardOffset - total : forwardOffset;
 }
 
+export function getSideCardStep(offset: number): -1 | 0 | 1 {
+  if (offset === -1) return -1;
+  if (offset === 1) return 1;
+  return 0;
+}
+
 export function getSwipeStep(
   deltaX: number,
   elapsedMs: number,

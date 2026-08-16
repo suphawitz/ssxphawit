@@ -2235,6 +2235,46 @@ h2 em {
   outline-offset: -4px;
 }
 
+.project-gallery-side-control {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  border: 0;
+  border-radius: inherit;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.project-gallery-side-control-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: grid;
+  width: clamp(1.5rem, 3.5vw, 2.4rem);
+  height: clamp(1.5rem, 3.5vw, 2.4rem);
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  background: rgba(15, 15, 15, 0.62);
+  color: #fff;
+  font-size: clamp(0.9rem, 1.8vw, 1.2rem);
+  opacity: 0.72;
+  transform: translate(-50%, -50%);
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.project-gallery-side-control:hover .project-gallery-side-control-icon,
+.project-gallery-side-control:focus-visible .project-gallery-side-control-icon {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+.project-gallery-side-control:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -4px;
+}
+
 .project-gallery-card[data-offset="0"] {
   z-index: 5;
 }

@@ -12,6 +12,7 @@ import {
 import {
   getCircularOffset,
   getKeyboardStep,
+  getSideCardStep,
   getSwipeStep,
   isProjectGalleryClick,
   shouldCaptureProjectGalleryPointer,
@@ -52,26 +53,60 @@ function ExpandButton({
   );
 }
 
+function SideCardButton({
+  image,
+  step,
+  onNavigate,
+}: {
+  image: ProjectImage;
+  step: -1 | 1;
+  onNavigate: (step: -1 | 1) => void;
+}) {
+  const direction = step === -1 ? "previous" : "next";
+  const arrow = step === -1 ? "←" : "→";
+
+  return (
+    <button
+      aria-label={`View ${direction} project image`}
+      className="project-gallery-side-control"
+      onClick={(event) => {
+        event.stopPropagation();
+        onNavigate(step);
+      }}
+      type="button"
+    >
+      <span className="project-gallery-side-control-icon" aria-hidden="true">
+        {arrow}
+      </span>
+      <span className="sr-only">{image.alt || `View ${direction} project image`}</span>
+    </button>
+  );
+}
+
 function ProjectGalleryImage({
   image,
   index,
   isActive,
   offset,
   onExpand,
+  onNavigate,
 }: {
   image: ProjectImage;
   index: number;
   isActive: boolean;
   offset: number;
   onExpand: (trigger: HTMLButtonElement) => void;
+  onNavigate: (step: -1 | 1) => void;
 }) {
   const isSvg = image.src.endsWith(".svg");
   const boundedOffset = Math.max(-2, Math.min(2, offset));
   const isHidden = Math.abs(offset) > 2;
+  const sideStep = getSideCardStep(offset);
+  const isAccessible = isActive || sideStep !== 0;
 
   return (
     <figure
-      aria-hidden={!isActive}
+      aria-hidden={!isAccessible}
       className="project-gallery-card"
       data-hidden={isHidden ? "true" : undefined}
       data-offset={boundedOffset}
@@ -87,6 +122,9 @@ function ProjectGalleryImage({
         unoptimized={isSvg}
       />
       {isActive ? <ExpandButton image={image} onExpand={onExpand} /> : null}
+      {!isActive && sideStep !== 0 ? (
+        <SideCardButton image={image} step={sideStep} onNavigate={onNavigate} />
+      ) : null}
     </figure>
   );
 }
@@ -263,6 +301,7 @@ export function ProjectGallery({ project }: { project: Project }) {
               key={image.src}
               offset={offset}
               onExpand={handleExpand}
+              onNavigate={navigate}
             />
           );
         })}
