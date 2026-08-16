@@ -12,6 +12,7 @@ import {
 } from "react";
 
 import { getKeyboardStep, getSwipeStep } from "@/lib/project-carousel";
+import { closeProjectDialog, openProjectDialog } from "@/lib/project-dialog";
 import type { ProjectImage } from "@/types/project";
 
 type LightboxPointerStart = {
@@ -46,10 +47,8 @@ export function ProjectLightbox({
     const dialog = dialogRef.current;
     if (!dialog) return;
 
-    if (isOpen && !dialog.open) {
-      dialog.showModal();
-    }
-    if (!isOpen && dialog.open) dialog.close();
+    if (isOpen && !dialog.open) openProjectDialog(dialog);
+    if (!isOpen && dialog.open) closeProjectDialog(dialog);
   }, [isOpen]);
 
   function resetPointerGesture() {
@@ -110,7 +109,7 @@ export function ProjectLightbox({
   function handleKeyDown(event: ReactKeyboardEvent<HTMLDialogElement>) {
     if (event.key === "Escape") {
       event.preventDefault();
-      dialogRef.current?.close();
+      requestClose();
       return;
     }
 
@@ -124,7 +123,16 @@ export function ProjectLightbox({
   }
 
   function handleBackdropClick(event: ReactMouseEvent<HTMLDialogElement>) {
-    if (event.target === event.currentTarget) dialogRef.current?.close();
+    if (event.target === event.currentTarget && dialogRef.current) {
+      requestClose();
+    }
+  }
+
+  function requestClose() {
+    const dialog = dialogRef.current;
+    if (!dialog) return;
+
+    if (!closeProjectDialog(dialog)) handleDialogClose();
   }
 
   function handleDialogClose() {
@@ -151,7 +159,7 @@ export function ProjectLightbox({
         className="project-lightbox-close"
         onClick={(event) => {
           event.stopPropagation();
-          dialogRef.current?.close();
+          requestClose();
         }}
         type="button"
       >
