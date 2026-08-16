@@ -38,6 +38,10 @@ export function isProjectGalleryClick(deltaX: number, deltaY: number) {
   return Math.hypot(deltaX, deltaY) <= 8;
 }
 
+export function isProjectGallerySideControl(className: string | null) {
+  return className === "project-gallery-side-control";
+}
+
 export function shouldCaptureProjectGalleryPointer(
   deltaX: number,
   deltaY: number,

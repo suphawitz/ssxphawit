@@ -15,6 +15,7 @@ import {
   getSideCardStep,
   getSwipeStep,
   isProjectGalleryClick,
+  isProjectGallerySideControl,
   shouldCaptureProjectGalleryPointer,
   wrapProjectIndex,
 } from "@/lib/project-carousel";
@@ -194,8 +195,8 @@ export function ProjectGallery({ project }: { project: Project }) {
   function handlePointerDown(event: ReactPointerEvent<HTMLElement>) {
     if (event.pointerType === "mouse" && event.button !== 0) return;
 
-    const isInteractiveControl =
-      event.target instanceof Element && event.target.closest("button, a") !== null;
+    const control = event.target instanceof Element ? event.target.closest("button") : null;
+    const isInteractiveControl = isProjectGallerySideControl(control?.className ?? null);
 
     pointerStart.current = {
       isInteractiveControl,
