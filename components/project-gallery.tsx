@@ -14,6 +14,7 @@ import {
   getKeyboardStep,
   getSwipeStep,
   isProjectGalleryClick,
+  shouldCaptureProjectGalleryPointer,
   wrapProjectIndex,
 } from "@/lib/project-carousel";
 import { getProjectGallery } from "@/lib/projects";
@@ -148,7 +149,6 @@ export function ProjectGallery({ project }: { project: Project }) {
       y: event.clientY,
     };
     suppressExpand.current = false;
-    event.currentTarget.setPointerCapture(event.pointerId);
     setDragX(0);
     setIsDragging(true);
   }
@@ -158,6 +158,15 @@ export function ProjectGallery({ project }: { project: Project }) {
 
     const width = galleryRef.current?.clientWidth ?? window.innerWidth;
     const deltaX = event.clientX - pointerStart.current.x;
+    const deltaY = event.clientY - pointerStart.current.y;
+
+    if (
+      shouldCaptureProjectGalleryPointer(deltaX, deltaY) &&
+      !event.currentTarget.hasPointerCapture(event.pointerId)
+    ) {
+      event.currentTarget.setPointerCapture(event.pointerId);
+    }
+
     const maximumDrag = width * 0.24;
     setDragX(Math.max(-maximumDrag, Math.min(maximumDrag, deltaX)));
   }

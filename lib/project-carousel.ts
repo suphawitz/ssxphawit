@@ -31,3 +31,7 @@ export function getKeyboardStep(key: string): -1 | 0 | 1 {
 export function isProjectGalleryClick(deltaX: number, deltaY: number) {
   return Math.hypot(deltaX, deltaY) <= 8;
 }
+
+export function shouldCaptureProjectGalleryPointer(deltaX: number, deltaY: number) {
+  return !isProjectGalleryClick(deltaX, deltaY);
+}
