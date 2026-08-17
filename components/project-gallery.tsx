@@ -21,6 +21,8 @@ import {
 } from "@/lib/project-carousel";
 import { getProjectGallery } from "@/lib/projects";
 import type { Project, ProjectImage } from "@/types/project";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCaretRight, faCaretLeft } from "@fortawesome/free-solid-svg-icons";
 
 import { ProjectLightbox } from "./project-lightbox";
 
@@ -65,7 +67,7 @@ function SideCardButton({
   onNavigate: (step: -1 | 1) => void;
 }) {
   const direction = step === -1 ? "previous" : "next";
-  const arrow = step === -1 ? "←" : "→";
+  const arrow = step === -1 ? faCaretLeft : faCaretRight;
 
   return (
     <button
@@ -79,7 +81,7 @@ function SideCardButton({
       type="button"
     >
       <span className="project-gallery-side-control-icon" aria-hidden="true">
-        {arrow}
+        <FontAwesomeIcon icon={arrow} />
       </span>
       <span className="sr-only">{image.alt || `View ${direction} project image`}</span>
     </button>
